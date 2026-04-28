@@ -1,53 +1,77 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Clenomantra - Cleaning Products</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clenomantra | Cleaning Products in India</title>
+<meta name="description" content="Clenomantra - Floor Cleaner, Toilet Cleaner & Dishwash Liquid. High quality cleaning products in India.">
 
 <style>
 body {
-  font-family: Arial;
   margin: 0;
-  background: #f5f7fa;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
+
+/* HEADER */
+.header {
+  background: linear-gradient(135deg, #0077cc, #00c6ff);
+  color: white;
+  padding: 30px 15px;
   text-align: center;
 }
 
-.header {
-  background: #0077cc;
-  color: white;
-  padding: 20px;
+.header h1 {
+  margin: 0;
+  font-size: 28px;
 }
 
 .tagline {
-  margin-top: -10px;
   font-size: 14px;
 }
 
+/* PRODUCTS */
 .section {
-  padding: 20px;
+  padding: 25px 15px;
+  text-align: center;
 }
 
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .card {
   background: white;
+  width: 160px;
   padding: 15px;
-  border-radius: 10px;
-  width: 140px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
 
 .card img {
-  width: 60px;
+  width: 70px;
 }
 
-.contact p {
-  margin: 5px;
+.price {
+  color: #0077cc;
+  font-weight: bold;
+}
+
+/* CONTACT */
+.contact {
+  background: white;
+  margin: 20px;
+  padding: 20px;
+  border-radius: 12px;
 }
 
 .whatsapp {
@@ -55,17 +79,19 @@ body {
   margin-top: 15px;
   background: #25D366;
   color: white;
-  padding: 12px 20px;
+  padding: 14px 25px;
   border-radius: 8px;
   text-decoration: none;
+  font-size: 16px;
   font-weight: bold;
 }
 
+/* FOOTER */
 .footer {
-  margin-top: 20px;
-  padding: 10px;
+  text-align: center;
   font-size: 12px;
   color: gray;
+  padding: 15px;
 }
 </style>
 </head>
@@ -83,34 +109,38 @@ body {
   <div class="products">
     <div class="card">
       <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
-      <p>Floor Cleaner</p>
+      <h4>Floor Cleaner</h4>
+      <p class="price">₹99 / Bottle</p>
     </div>
 
     <div class="card">
       <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png">
-      <p>Toilet Cleaner</p>
+      <h4>Toilet Cleaner</h4>
+      <p class="price">₹89 / Bottle</p>
     </div>
 
     <div class="card">
       <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
-      <p>Dishwash Liquid</p>
+      <h4>Dishwash Liquid</h4>
+      <p class="price">₹79 / Bottle</p>
     </div>
   </div>
 </div>
 
-<div class="section contact">
-  <h2>Contact</h2>
+<div class="contact">
+  <h2>Contact Us</h2>
   <p>📍 Jalandhar, India</p>
   <p>📧 clenomantra@gmail.com</p>
   <p>📞 +91 9713545556</p>
 
-  <a class="whatsapp" href="https://wa.me/919713545556?text=Hello%20Clenomantra%2C%20mujhe%20products%20ki%20info%20chahiye">
-    Order on WhatsApp
+  <a class="whatsapp" 
+  href="https://wa.me/919713545556?text=Hello%20Clenomantra%2C%20mujhe%20products%20order%20karne%20hain">
+  Order Now on WhatsApp
   </a>
 </div>
 
 <div class="footer">
-  © 2026 Clenomantra. All rights reserved.
+  © 2026 Clenomantra | All Rights Reserved
 </div>
 
 </body>

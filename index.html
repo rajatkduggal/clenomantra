@@ -5,56 +5,46 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-body{
-margin:0;
-font-family:Arial;
-scroll-behavior:smooth;
-}
+body{margin:0;font-family:Arial;background:#f4f6f9}
 
 /* NAVBAR */
 .nav{
-background:#0a58ca;
-padding:12px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-position:sticky;
-top:0;
+display:flex;justify-content:space-between;
+align-items:center;padding:10px 20px;
+background:#0a58ca;color:white;position:sticky;top:0;
 z-index:1000;
 }
 
-.nav img{height:40px;}
+.nav img{height:40px}
 
 .nav a{
-color:white;
-margin:0 10px;
-text-decoration:none;
-font-weight:bold;
+color:white;text-decoration:none;margin:0 10px;font-weight:bold;
 }
 
-.order-btn{
-background:#25D366;
-padding:8px 12px;
-border-radius:5px;
-color:white;
+.order{
+background:#25D366;padding:8px 12px;border-radius:6px;
 }
 
-/* HERO */
-.hero{
-text-align:center;
-padding:30px;
-background:#f5f5f5;
+/* HERO SLIDER */
+.slider{
+position:relative;overflow:hidden;
 }
 
-.hero img{
+.slide{
+display:none;
+}
+
+.slide img{
 width:100%;
-border-radius:12px;
-margin-top:15px;
+height:250px;
+object-fit:cover;
 }
 
-/* 🔥 ANIMATION */
+.active{display:block}
+
+/* BRAND ANIMATION */
 .brand{
-font-size:36px;
+text-align:center;font-size:40px;
 font-weight:bold;
 background:linear-gradient(90deg,#0a58ca,#25D366);
 -webkit-background-clip:text;
@@ -63,77 +53,64 @@ animation:glow 2s infinite alternate;
 }
 
 @keyframes glow{
-from{letter-spacing:1px;}
-to{letter-spacing:4px;}
+from{letter-spacing:1px}
+to{letter-spacing:5px}
 }
 
 /* SECTION */
-.section{
-padding:30px 20px;
-text-align:center;
-}
+.section{padding:30px;text-align:center}
 
-/* GRID PRODUCTS */
+/* GRID */
 .grid{
-display:grid;
-grid-template-columns:1fr;
+display:grid;grid-template-columns:1fr;
 gap:15px;
 }
 
 .card{
-background:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 3px 10px rgba(0,0,0,0.1);
+background:white;padding:15px;border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 
 .card:hover{
-transform:scale(1.03);
+transform:translateY(-5px);
 }
 
 .card img{
-width:100%;
-border-radius:10px;
+width:100%;border-radius:10px;
 }
 
 /* ABOUT */
-.about{
-background:#f5f5f5;
+.about{background:#eef3f7}
+
+/* CONTACT FORM */
+input,textarea{
+width:100%;padding:10px;margin:8px 0;
+border-radius:6px;border:1px solid #ccc;
 }
 
-/* CONTACT */
-.contact{
-background:white;
+button{
+background:#0a58ca;color:white;padding:10px;
+border:none;border-radius:6px;width:100%;
 }
 
-/* FLOAT WHATSAPP */
+/* WHATSAPP FLOAT */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-padding:12px 15px;
-border-radius:50px;
-text-decoration:none;
-font-size:14px;
-box-shadow:0 4px 10px rgba(0,0,0,0.3);
+position:fixed;bottom:20px;right:20px;
+background:#25D366;color:white;padding:12px;
+border-radius:50px;text-decoration:none;
 }
 
 /* FOOTER */
 .footer{
-background:#0a58ca;
-color:white;
-text-align:center;
-padding:15px;
+background:#0a58ca;color:white;
+text-align:center;padding:15px;
 }
 
-/* DESKTOP VIEW */
+/* DESKTOP */
 @media(min-width:768px){
-.grid{
-grid-template-columns:repeat(3,1fr);
-}
+.grid{grid-template-columns:repeat(3,1fr)}
+.slide img{height:400px}
 }
 </style>
 </head>
@@ -143,25 +120,23 @@ grid-template-columns:repeat(3,1fr);
 <!-- NAVBAR -->
 <div class="nav">
 <img src="LOGO.png">
-
 <div>
 <a href="#home">Home</a>
 <a href="#products">Products</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </div>
-
-<a class="order-btn" href="https://wa.me/919713545556">Order</a>
+<a class="order" href="https://wa.me/919713545556">Order</a>
 </div>
 
-<!-- HERO -->
-<div class="hero" id="home">
-
+<!-- BRAND -->
 <div class="brand">CLENOMANTRA</div>
-<h2>Har Drop Me Safai Ka Mantra</h2>
 
-<img src="banner.png">
-
+<!-- SLIDER -->
+<div class="slider">
+<div class="slide active"><img src="banner.png"></div>
+<div class="slide"><img src="Product1.png"></div>
+<div class="slide"><img src="product2.png"></div>
 </div>
 
 <!-- PRODUCTS -->
@@ -179,13 +154,13 @@ grid-template-columns:repeat(3,1fr);
 <div class="card">
 <img src="product2.png">
 <h3>Toilet Cleaner</h3>
-<p>Kills 99.9% germs + tough stain removal</p>
+<p>Kills 99.9% germs</p>
 </div>
 
 <div class="card">
 <img src="product3.png">
 <h3>Dishwash Liquid</h3>
-<p>Soft on hands + powerful grease cutting</p>
+<p>Soft on hands + strong grease removal</p>
 </div>
 
 </div>
@@ -193,45 +168,64 @@ grid-template-columns:repeat(3,1fr);
 
 <!-- ABOUT -->
 <div class="section about" id="about">
-<h2>About Clenomantra</h2>
+<h2>About Us</h2>
 
 <p>
-Clenomantra is an Indian cleaning brand delivering powerful,
-affordable and effective cleaning solutions for every home.
+Clenomantra is a premium Indian cleaning brand providing powerful,
+safe and affordable cleaning solutions.
 </p>
 
 <h3>Founder</h3>
 <p>
-Founded by <b>Poonam Duggal</b>, Clenomantra is built with a vision
-to provide high quality cleaning products that ensure hygiene,
-freshness and long lasting performance.
+<b>Poonam Duggal</b> – Visionary behind Clenomantra,
+focused on hygiene, quality and trust.
 </p>
-
 </div>
 
 <!-- CONTACT -->
-<div class="section contact" id="contact">
+<div class="section" id="contact">
 <h2>Contact Us</h2>
 
 <p>📍 Jalandhar, India</p>
 <p>📧 clenomantra@gmail.com</p>
-<p>📞 +91 9713545556</p>
+<p>📞 9713545556</p>
 
-<a class="order-btn" href="https://wa.me/919713545556">
-Chat on WhatsApp
-</a>
+<!-- FORM -->
+<form>
+<input type="text" placeholder="Your Name">
+<input type="email" placeholder="Your Email">
+<textarea placeholder="Message"></textarea>
+<button>Send Message</button>
+</form>
+
+<br>
+
+<!-- MAP -->
+<iframe 
+src="https://maps.google.com/maps?q=Jalandhar&t=&z=13&ie=UTF8&iwloc=&output=embed"
+width="100%" height="200"></iframe>
 
 </div>
 
-<!-- FLOAT BUTTON -->
-<a class="whatsapp" href="https://wa.me/919713545556">
-WhatsApp
-</a>
+<!-- FLOAT -->
+<a class="whatsapp" href="https://wa.me/919713545556">WhatsApp</a>
 
 <!-- FOOTER -->
 <div class="footer">
 © 2026 Clenomantra | Made in India 🇮🇳
 </div>
+
+<!-- JS -->
+<script>
+let slides=document.querySelectorAll(".slide");
+let i=0;
+
+setInterval(()=>{
+slides[i].classList.remove("active");
+i=(i+1)%slides.length;
+slides[i].classList.add("active");
+},3000);
+</script>
 
 </body>
 </html>

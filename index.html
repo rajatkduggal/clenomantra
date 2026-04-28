@@ -1,32 +1,117 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Clenomantra</title>
+<title>Clenomantra - Cleaning Products</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  font-family: Arial;
+  margin: 0;
+  background: #f5f7fa;
+  text-align: center;
+}
+
+.header {
+  background: #0077cc;
+  color: white;
+  padding: 20px;
+}
+
+.tagline {
+  margin-top: -10px;
+  font-size: 14px;
+}
+
+.section {
+  padding: 20px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  width: 140px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 60px;
+}
+
+.contact p {
+  margin: 5px;
+}
+
+.whatsapp {
+  display: inline-block;
+  margin-top: 15px;
+  background: #25D366;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.footer {
+  margin-top: 20px;
+  padding: 10px;
+  font-size: 12px;
+  color: gray;
+}
+</style>
 </head>
 
-<body style="font-family:Arial; text-align:center; background:#f4f9fc;">
+<body>
 
-<h1 style="color:#0077cc;">Clenomantra</h1>
-<p><b>Har Drop Me Safai Ka Mantra</b></p>
+<div class="header">
+  <h1>Clenomantra</h1>
+  <p class="tagline">Har Drop Me Safai Ka Mantra</p>
+</div>
 
-<h2>Our Products</h2>
-<p>🧴 Floor Cleaner</p>
-<p>🚽 Toilet Cleaner</p>
-<p>🍽 Dishwash Liquid</p>
+<div class="section">
+  <h2>Our Products</h2>
 
-<h2>Contact</h2>
-<p>📍 Jalandhar, India</p>
-<p>📧 clenomantra@gmail.com</p>
-<p>📞 +91 9713545556</p>
+  <div class="products">
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
+      <p>Floor Cleaner</p>
+    </div>
 
-<br>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png">
+      <p>Toilet Cleaner</p>
+    </div>
 
-<a href="https://wa.me/919713545556" 
-style="background:#25D366; color:white; padding:10px 20px; text-decoration:none; border-radius:5px;">
-Order on WhatsApp
-</a>
+    <div class="card">
+      <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
+      <p>Dishwash Liquid</p>
+    </div>
+  </div>
+</div>
+
+<div class="section contact">
+  <h2>Contact</h2>
+  <p>📍 Jalandhar, India</p>
+  <p>📧 clenomantra@gmail.com</p>
+  <p>📞 +91 9713545556</p>
+
+  <a class="whatsapp" href="https://wa.me/919713545556?text=Hello%20Clenomantra%2C%20mujhe%20products%20ki%20info%20chahiye">
+    Order on WhatsApp
+  </a>
+</div>
+
+<div class="footer">
+  © 2026 Clenomantra. All rights reserved.
+</div>
 
 </body>
 </html>
-<!-- update 2 -->

@@ -1,97 +1,76 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
+<title>Clenomantra</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Clenomantra | Cleaning Products in India</title>
-<meta name="description" content="Clenomantra - Floor Cleaner, Toilet Cleaner & Dishwash Liquid. High quality cleaning products in India.">
-
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
+body{
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
 }
 
 /* HEADER */
-.header {
-  background: linear-gradient(135deg, #0077cc, #00c6ff);
-  color: white;
-  padding: 30px 15px;
-  text-align: center;
+.header{
+background:#0a58ca;
+color:white;
+padding:15px;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
-.header h1 {
-  margin: 0;
-  font-size: 28px;
+.header img{
+height:40px;
 }
 
-.tagline {
-  font-size: 14px;
+.btn{
+background:#25D366;
+padding:10px 15px;
+color:white;
+text-decoration:none;
+border-radius:5px;
+}
+
+/* HERO */
+.hero{
+text-align:center;
+padding:20px;
+background:white;
+}
+
+.hero img{
+width:100%;
+border-radius:10px;
 }
 
 /* PRODUCTS */
-.section {
-  padding: 25px 15px;
-  text-align: center;
+.products{
+padding:20px;
 }
 
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+.card{
+background:white;
+padding:15px;
+margin:10px 0;
+border-radius:10px;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+text-align:center;
 }
 
-.card {
-  background: white;
-  width: 160px;
-  padding: 15px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-}
-
-.card img {
-  width: 70px;
-}
-
-.price {
-  color: #0077cc;
-  font-weight: bold;
-}
-
-/* CONTACT */
-.contact {
-  background: white;
-  margin: 20px;
-  padding: 20px;
-  border-radius: 12px;
-}
-
-.whatsapp {
-  display: inline-block;
-  margin-top: 15px;
-  background: #25D366;
-  color: white;
-  padding: 14px 25px;
-  border-radius: 8px;
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: bold;
+.card img{
+width:100%;
+border-radius:10px;
 }
 
 /* FOOTER */
-.footer {
-  text-align: center;
-  font-size: 12px;
-  color: gray;
-  padding: 15px;
+.footer{
+background:#0a58ca;
+color:white;
+text-align:center;
+padding:15px;
+margin-top:20px;
 }
 </style>
 </head>
@@ -99,48 +78,39 @@ body {
 <body>
 
 <div class="header">
-  <h1>Clenomantra</h1>
-  <p class="tagline">Har Drop Me Safai Ka Mantra</p>
+<img src="LOGO.png">
+<a class="btn" href="https://wa.me/919713545556">Order</a>
 </div>
 
-<div class="section">
-  <h2>Our Products</h2>
-
-  <div class="products">
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png">
-      <h4>Floor Cleaner</h4>
-      <p class="price">₹99 / Bottle</p>
-    </div>
-
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/1046/1046857.png">
-      <h4>Toilet Cleaner</h4>
-      <p class="price">₹89 / Bottle</p>
-    </div>
-
-    <div class="card">
-      <img src="https://cdn-icons-png.flaticon.com/512/2933/2933245.png">
-      <h4>Dishwash Liquid</h4>
-      <p class="price">₹79 / Bottle</p>
-    </div>
-  </div>
+<div class="hero">
+<h2>Next Level Liquid Cleaning</h2>
+<img src="banner.png">
 </div>
 
-<div class="contact">
-  <h2>Contact Us</h2>
-  <p>📍 Jalandhar, India</p>
-  <p>📧 clenomantra@gmail.com</p>
-  <p>📞 +91 9713545556</p>
+<div class="products">
 
-  <a class="whatsapp" 
-  href="https://wa.me/919713545556?text=Hello%20Clenomantra%2C%20mujhe%20products%20order%20karne%20hain">
-  Order Now on WhatsApp
-  </a>
+<div class="card">
+<img src="Product1.png">
+<h3>Floor Cleaner</h3>
+<p>Deep cleaning + long fragrance</p>
+</div>
+
+<div class="card">
+<img src="product2.png">
+<h3>Toilet Cleaner</h3>
+<p>Kills 99.9% germs</p>
+</div>
+
+<div class="card">
+<img src="product3.png">
+<h3>Dishwash Liquid</h3>
+<p>Soft on hands + tough on grease</p>
+</div>
+
 </div>
 
 <div class="footer">
-  © 2026 Clenomantra | All Rights Reserved
+© 2026 Clenomantra
 </div>
 
 </body>

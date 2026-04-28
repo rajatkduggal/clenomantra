@@ -8,15 +8,19 @@
 body{
 margin:0;
 font-family:Arial;
+scroll-behavior:smooth;
 }
 
 /* NAVBAR */
 .nav{
 background:#0a58ca;
-padding:10px;
+padding:12px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
 .nav img{height:40px;}
@@ -28,36 +32,93 @@ text-decoration:none;
 font-weight:bold;
 }
 
+.order-btn{
+background:#25D366;
+padding:8px 12px;
+border-radius:5px;
+color:white;
+}
+
 /* HERO */
 .hero{
 text-align:center;
-padding:20px;
+padding:30px;
 background:#f5f5f5;
 }
 
 .hero img{
 width:100%;
-border-radius:10px;
+border-radius:12px;
+margin-top:15px;
+}
+
+/* 🔥 ANIMATION */
+.brand{
+font-size:36px;
+font-weight:bold;
+background:linear-gradient(90deg,#0a58ca,#25D366);
+-webkit-background-clip:text;
+color:transparent;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{letter-spacing:1px;}
+to{letter-spacing:4px;}
 }
 
 /* SECTION */
 .section{
-padding:20px;
+padding:30px 20px;
 text-align:center;
 }
 
-/* PRODUCT */
+/* GRID PRODUCTS */
+.grid{
+display:grid;
+grid-template-columns:1fr;
+gap:15px;
+}
+
 .card{
 background:white;
 padding:15px;
-margin:15px;
-border-radius:10px;
-box-shadow:0 2px 8px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
 }
 
 .card img{
 width:100%;
 border-radius:10px;
+}
+
+/* ABOUT */
+.about{
+background:#f5f5f5;
+}
+
+/* CONTACT */
+.contact{
+background:white;
+}
+
+/* FLOAT WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:12px 15px;
+border-radius:50px;
+text-decoration:none;
+font-size:14px;
+box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* FOOTER */
@@ -66,6 +127,13 @@ background:#0a58ca;
 color:white;
 text-align:center;
 padding:15px;
+}
+
+/* DESKTOP VIEW */
+@media(min-width:768px){
+.grid{
+grid-template-columns:repeat(3,1fr);
+}
 }
 </style>
 </head>
@@ -83,76 +151,86 @@ padding:15px;
 <a href="#contact">Contact</a>
 </div>
 
-<a style="background:#25D366;padding:8px 12px;border-radius:5px;color:white;"
-href="https://wa.me/919713545556">Order</a>
+<a class="order-btn" href="https://wa.me/919713545556">Order</a>
 </div>
 
 <!-- HERO -->
 <div class="hero" id="home">
-<h2>Next Level Liquid Cleaning</h2>
+
+<div class="brand">CLENOMANTRA</div>
+<h2>Har Drop Me Safai Ka Mantra</h2>
+
 <img src="banner.png">
+
 </div>
 
 <!-- PRODUCTS -->
 <div class="section" id="products">
 <h2>Our Products</h2>
 
+<div class="grid">
+
 <div class="card">
 <img src="Product1.png">
 <h3>Floor Cleaner</h3>
-<p>Deep cleaning + long fragrance</p>
+<p>Deep cleaning + long lasting fragrance</p>
 </div>
 
 <div class="card">
 <img src="product2.png">
 <h3>Toilet Cleaner</h3>
-<p>Kills 99.9% germs</p>
+<p>Kills 99.9% germs + tough stain removal</p>
 </div>
 
 <div class="card">
 <img src="product3.png">
 <h3>Dishwash Liquid</h3>
-<p>Soft on hands + tough on grease</p>
+<p>Soft on hands + powerful grease cutting</p>
 </div>
 
+</div>
 </div>
 
 <!-- ABOUT -->
-<div class="section" id="about">
+<div class="section about" id="about">
 <h2>About Clenomantra</h2>
 
 <p>
-Clenomantra is an Indian cleaning brand focused on delivering
-powerful and affordable cleaning solutions for every home.
+Clenomantra is an Indian cleaning brand delivering powerful,
+affordable and effective cleaning solutions for every home.
 </p>
 
 <h3>Founder</h3>
 <p>
-Founded by <b>Rajat Duggal</b>, Clenomantra aims to bring
-quality cleaning products with strong performance and
-long lasting freshness.
+Founded by <b>Poonam Duggal</b>, Clenomantra is built with a vision
+to provide high quality cleaning products that ensure hygiene,
+freshness and long lasting performance.
 </p>
 
 </div>
 
 <!-- CONTACT -->
-<div class="section" id="contact">
+<div class="section contact" id="contact">
 <h2>Contact Us</h2>
 
 <p>📍 Jalandhar, India</p>
 <p>📧 clenomantra@gmail.com</p>
 <p>📞 +91 9713545556</p>
 
-<a style="background:#25D366;padding:10px 15px;color:white;border-radius:5px;text-decoration:none;"
-href="https://wa.me/919713545556">
+<a class="order-btn" href="https://wa.me/919713545556">
 Chat on WhatsApp
 </a>
 
 </div>
 
+<!-- FLOAT BUTTON -->
+<a class="whatsapp" href="https://wa.me/919713545556">
+WhatsApp
+</a>
+
 <!-- FOOTER -->
 <div class="footer">
-© 2026 Clenomantra
+© 2026 Clenomantra | Made in India 🇮🇳
 </div>
 
 </body>

@@ -13,11 +13,17 @@ position:sticky;top:0;z-index:1000;
 }
 .nav img{height:40px}
 .nav a{color:white;text-decoration:none;margin:0 10px;font-weight:bold}
-.order{background:#25D366;padding:8px 12px;border-radius:6px}
+.order-btn{background:#25D366;padding:8px 12px;border-radius:6px;color:white}
 
-/* BRAND ANIMATION */
+/* OFFER BAR */
+.offer{
+background:#25D366;color:white;text-align:center;
+padding:8px;font-weight:bold;
+}
+
+/* BRAND */
 .brand{
-text-align:center;font-size:38px;font-weight:bold;
+text-align:center;font-size:36px;font-weight:bold;
 background:linear-gradient(90deg,#0a58ca,#25D366);
 -webkit-background-clip:text;color:transparent;
 animation:glow 2s infinite alternate;
@@ -46,11 +52,8 @@ transition:0.3s;
 .card:hover{transform:translateY(-5px)}
 .card img{width:100%;border-radius:10px}
 
-/* ABOUT */
-.about{background:#eef3f7}
-
 /* FORM */
-input,textarea{
+input,select,textarea{
 width:100%;padding:10px;margin:8px 0;
 border-radius:6px;border:1px solid #ccc;
 }
@@ -58,6 +61,9 @@ button{
 background:#0a58ca;color:white;
 padding:10px;border:none;border-radius:6px;width:100%;
 }
+
+/* ABOUT */
+.about{background:#eef3f7}
 
 /* WHATSAPP FLOAT */
 .whatsapp{
@@ -85,8 +91,8 @@ text-align:center;padding:15px;
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </div>
-<a class="order" href="https://wa.me/919713545556">Order</a>
-</div><!-- BRAND --><div class="brand">CLENOMANTRA</div><!-- SLIDER --><div class="slider">
+<a class="order-btn" href="https://wa.me/919713545556">Order</a>
+</div><!-- OFFER --><div class="offer">🔥 Special Offer: Order Now on WhatsApp 🚀</div><!-- BRAND --><div class="brand">CLENOMANTRA</div><!-- SLIDER --><div class="slider">
 <div class="slide active"><img src="banner.png"></div>
 <div class="slide"><img src="Product1.png"></div>
 <div class="slide"><img src="product2.png"></div>
@@ -94,35 +100,47 @@ text-align:center;padding:15px;
 <h2>Our Products</h2><div class="grid"><div class="card">
 <img src="Product1.png">
 <h3>Floor Cleaner</h3>
-<p>Deep cleaning + long lasting fragrance</p>
+<p>Deep cleaning + fragrance</p>
+<a class="order-btn" href="https://wa.me/919713545556?text=I want Floor Cleaner">Order Now</a>
 </div><div class="card">
 <img src="product2.png">
 <h3>Toilet Cleaner</h3>
 <p>Kills 99.9% germs</p>
+<a class="order-btn" href="https://wa.me/919713545556?text=I want Toilet Cleaner">Order Now</a>
 </div><div class="card">
 <img src="product3.png">
 <h3>Dishwash Liquid</h3>
-<p>Soft on hands + strong grease removal</p>
+<p>Strong grease removal</p>
+<a class="order-btn" href="https://wa.me/919713545556?text=I want Dishwash Liquid">Order Now</a>
 </div></div>
 </div><!-- ABOUT --><div class="section about" id="about">
-<h2>About Us</h2><p>
-Clenomantra is a premium Indian cleaning brand providing powerful,
-safe and affordable cleaning solutions.
+<h2>About Clenomantra</h2><p>
+Clenomantra is a premium Indian cleaning brand delivering powerful,
+safe and affordable cleaning solutions for every home.
 </p><h3>Founder</h3>
-<p>
-<b>Poonam Duggal</b> – Founder of Clenomantra,
-focused on hygiene, quality and trust.
-</p>
-</div><!-- CONTACT --><div class="section" id="contact">
+<p><b>Poonam Duggal</b> – Leading the vision of cleanliness and quality.</p></div><!-- CONTACT --><div class="section" id="contact">
 <h2>Contact Us</h2><p>📍 Jalandhar, India</p>
 <p>📧 clenomantra@gmail.com</p>
-<p>📞 9713545556</p><!-- FORM (Formspree Working) --><form action="https://formspree.io/f/mgorgvyn" method="POST"><input type="text" name="name" placeholder="Your Name" required><input type="email" name="email" placeholder="Your Email" required><textarea name="message" placeholder="Your Message"></textarea><button type="submit">Send Message</button>
+<p>📞 9713545556</p><!-- EMAIL FORM --><form action="https://formspree.io/f/mgorgvyn" method="POST">
+<input type="hidden" name="_subject" value="New Clenomantra Lead"><input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Your Message"></textarea><button type="submit">Send Message</button>
+
+</form><br><br>
+
+<!-- ORDER FORM --><h3>Place Order</h3><form onsubmit="sendOrder(); return false;">
+<input id="name" placeholder="Your Name" required>
+<input id="phone" placeholder="Phone Number" required><select id="product">
+<option>Floor Cleaner</option>
+<option>Toilet Cleaner</option>
+<option>Dishwash Liquid</option>
+</select><input id="qty" placeholder="Quantity"><button>Place Order</button>
 
 </form></div><!-- WHATSAPP FLOAT --><a class="whatsapp" href="https://wa.me/919713545556">WhatsApp</a>
 
 <!-- FOOTER --><div class="footer">
 © 2026 Clenomantra | Made in India 🇮🇳
-</div><!-- SLIDER SCRIPT --><script>
+</div><!-- JS --><script>
 let slides=document.querySelectorAll(".slide");
 let i=0;
 
@@ -131,5 +149,21 @@ slides[i].classList.remove("active");
 i=(i+1)%slides.length;
 slides[i].classList.add("active");
 },3000);
+
+function sendOrder(){
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+let product=document.getElementById("product").value;
+let qty=document.getElementById("qty").value;
+
+let url="https://wa.me/919713545556?text="
++"Order Request%0A"
++"Name: "+name+"%0A"
++"Phone: "+phone+"%0A"
++"Product: "+product+"%0A"
++"Qty: "+qty;
+
+window.open(url,"_blank");
+}
 </script></body>
 </html>

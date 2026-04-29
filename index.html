@@ -13,7 +13,7 @@ body { margin:0; font-family:Montserrat; background:#f4f7fb; }
 /* NAV */
 .nav {
 display:flex; justify-content:space-between;
-padding:15px 20px; background:#0b3a82; color:white;
+padding:15px 20px; background:#0b3a82;
 }
 .nav img { height:45px; }
 .nav a {
@@ -21,13 +21,20 @@ background:#22c55e; padding:10px 20px;
 border-radius:30px; color:white; text-decoration:none;
 }
 
-/* HERO */
+/* HERO ANIMATION */
 .hero {
 height:90vh;
 background:url('banner1.png') center/cover no-repeat;
+animation: zoom 12s infinite alternate;
 }
+
+@keyframes zoom {
+from { background-size:100%; }
+to { background-size:110%; }
+}
+
 .overlay {
-background:rgba(11,58,130,0.75);
+background:rgba(11,58,130,0.7);
 height:100%;
 display:flex;
 flex-direction:column;
@@ -48,6 +55,7 @@ background: linear-gradient(90deg,#fff,#22c55e);
 /* SECTION */
 .section { padding:50px 20px; text-align:center; }
 
+/* PRODUCTS */
 .grid {
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -59,7 +67,9 @@ background:white;
 padding:20px;
 border-radius:15px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
 }
+.card:hover { transform:scale(1.05); }
 
 .card img {
 width:100%;
@@ -67,15 +77,17 @@ height:200px;
 object-fit:contain;
 }
 
-/* BUTTON */
-button {
+select, button {
 width:100%;
 padding:10px;
 margin-top:10px;
-border:none;
+border-radius:8px;
+}
+
+button {
 background:#0b3a82;
 color:white;
-border-radius:8px;
+border:none;
 }
 
 /* CART */
@@ -91,22 +103,44 @@ border-radius:10px;
 
 /* ABOUT */
 .about {
-background:#fff;
+background:white;
 padding:60px 20px;
 max-width:900px;
 margin:auto;
 line-height:1.7;
 }
 
-.about h2 { color:#0b3a82; }
-.about h3 { margin-top:30px; color:#22c55e; }
+/* CONTACT */
+.contact {
+text-align:center;
+padding:50px 20px;
+background:#f4f7fb;
+}
 
-/* QR */
-.qr { text-align:center; padding:40px; }
-.qr img { width:200px; }
+.contact img {
+height:70px;
+margin-bottom:10px;
+}
+
+.contact h2 {
+color:#0b3a82;
+}
+
+/* MAP */
+.map iframe {
+width:100%;
+height:300px;
+border:0;
+margin-top:20px;
+}
 
 /* FOOTER */
-.footer { background:#0b3a82; color:white; text-align:center; padding:20px; }
+.footer {
+background:#0b3a82;
+color:white;
+text-align:center;
+padding:20px;
+}
 </style>
 </head>
 
@@ -141,10 +175,8 @@ line-height:1.7;
 <option value="60">750ml ₹60</option>
 <option value="75">1L ₹75</option>
 </select>
-<select id="fq">
-<option>1</option><option>2</option><option>3</option>
-</select>
-<button onclick="add('Floor Cleaner','f','fq')">Add</button>
+<select id="fq"><option>1</option><option>2</option></select>
+<button onclick="add('Floor','f','fq')">Add</button>
 </div>
 
 <div class="card">
@@ -156,10 +188,8 @@ line-height:1.7;
 <option value="50">750ml ₹50</option>
 <option value="60">1L ₹60</option>
 </select>
-<select id="tq">
-<option>1</option><option>2</option><option>3</option>
-</select>
-<button onclick="add('Toilet Cleaner','t','tq')">Add</button>
+<select id="tq"><option>1</option><option>2</option></select>
+<button onclick="add('Toilet','t','tq')">Add</button>
 </div>
 
 <div class="card">
@@ -171,9 +201,7 @@ line-height:1.7;
 <option value="70">750ml ₹70</option>
 <option value="90">1L ₹90</option>
 </select>
-<select id="dq">
-<option>1</option><option>2</option><option>3</option>
-</select>
+<select id="dq"><option>1</option><option>2</option></select>
 <button onclick="add('Dishwash','d','dq')">Add</button>
 </div>
 
@@ -181,12 +209,12 @@ line-height:1.7;
 <img src="product4.png">
 <h3>Detergent</h3>
 <select id="de">
+<option value="30">250g ₹30</option>
 <option value="60">500g ₹60</option>
 <option value="110">1kg ₹110</option>
+<option value="240">4kg ₹240</option>
 </select>
-<select id="deq">
-<option>1</option><option>2</option><option>3</option>
-</select>
+<select id="deq"><option>1</option><option>2</option></select>
 <button onclick="add('Detergent','de','deq')">Add</button>
 </div>
 
@@ -199,36 +227,30 @@ Total ₹0<br>
 <button onclick="checkout()">Checkout</button>
 </div>
 
-<!-- QR -->
-<div class="qr">
-<h2>Scan & Pay</h2>
-<img src="QR.jpg">
-</div>
-
 <!-- ABOUT -->
 <div class="about">
 <h2>About Clenomantra</h2>
 <p>
-Clenomantra is a next-generation Indian cleaning brand committed to redefining hygiene standards in every household. Built on the principles of quality, innovation, and trust, we manufacture powerful liquid cleaning solutions designed to deliver deep cleaning, long-lasting freshness, and superior germ protection.
-<br><br>
-Our mission is not just to clean surfaces but to create healthier living spaces. Every product is carefully formulated to balance performance with safety, ensuring it is tough on dirt but gentle for everyday use. With a vision to become a trusted name across India, Clenomantra stands for reliability, affordability, and consistent performance.
+Clenomantra is a premium cleaning brand delivering powerful hygiene solutions across India. Our mission is to bring deep cleaning, freshness, and trust to every home.
 </p>
 
 <h3>Founder Message</h3>
 <p>
-"I, <b>Poonam Duggal</b>, founded Clenomantra with a simple yet powerful vision — to bring high-quality, effective, and affordable cleaning solutions to every Indian home. Cleanliness is not just about appearance; it is about health, safety, and dignity.
-<br><br>
-Through Clenomantra, we aim to empower households with products that deliver real results. Every bottle we create carries our commitment to excellence, trust, and customer satisfaction.
-<br><br>
-Together, let us build a cleaner, healthier, and better India."
+"I, <b>Poonam Duggal</b>, believe cleanliness is the foundation of a healthy life. Clenomantra is built to serve every home with quality and trust."
 </p>
 </div>
 
 <!-- CONTACT -->
-<div class="section">
-<h2>Contact</h2>
+<div class="contact">
+<img src="LOGO.png">
+<h2>Contact Us</h2>
 <p>📍 Jalandhar</p>
 <p>📞 9713545556</p>
+<p>📧 clenomantra@gmail.com</p>
+
+<div class="map">
+<iframe src="https://maps.google.com/maps?q=Jalandhar&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
 </div>
 
 <div class="footer">

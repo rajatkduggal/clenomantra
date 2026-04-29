@@ -4,301 +4,292 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clenomantra</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+
 <style>
-body { margin:0; font-family:Montserrat, sans-serif; background:#fff; }
+body { margin:0; font-family:Montserrat; background:#fff; }
 
 /* NAV */
 .nav {
     display:flex; justify-content:space-between; align-items:center;
-    padding:14px 20px; background:#0b3a82; color:white;
-    position: sticky; top: 0; z-index: 100;
+    padding:15px 20px; background:#0b3a82;
 }
-.nav img { height:42px; }
+.nav img { height:45px; }
+
 .nav a {
-    background:#22c55e; padding:8px 16px; border-radius:30px;
-    color:white; text-decoration:none; font-weight: 600;
-    transition: transform 0.3s, background 0.3s;
-}
-.nav a:hover {
-    background: #1ea34d; transform: scale(1.05);
+    background:#22c55e; padding:10px 18px;
+    border-radius:30px; color:#fff; text-decoration:none;
+    font-weight:600;
 }
 
 /* HERO */
 .hero {
-    background:#0b3a82; color:white; text-align:center;
-    padding:60px 20px;
+    background:#0b3a82; color:#fff;
+    text-align:center; padding:60px 20px;
 }
-.hero h1 { font-size:48px; margin-bottom: 10px; }
-.hero p { font-size: 1.2rem; margin-bottom: 15px; }
-.hero img { margin-top:20px; width:100%; max-width:900px; border-radius: 10px; }
+.hero h1 { font-size:46px; font-weight:800; }
+.hero p { margin:10px 0; }
+.hero img { width:100%; max-width:900px; border-radius:10px; }
 
-/* FEATURE BANNER */
-.feature-text {
-    background: #092e66; display: inline-block; padding: 10px 20px;
-    border-radius: 30px; font-weight: 600; margin-bottom: 20px;
-    font-size: 0.9rem; letter-spacing: 0.5px;
-}
-
-/* PRODUCTS */
-.section { padding:60px 20px; text-align:center; max-width: 1200px; margin: auto; }
+/* SECTION */
+.section { padding:60px 20px; text-align:center; }
 
 .grid {
-    display:grid; grid-template-columns:1fr; gap:30px; margin-top: 30px;
+    display:grid;
+    grid-template-columns:1fr;
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
 }
 
+/* CARD */
 .card {
-    background:#f4f7fb; padding:20px; border-radius:15px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    transition: transform 0.3s, box-shadow 0.3s;
+    background:#f4f7fb;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
 }
-.card:hover {
-    transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-}
+.card img { width:100%; height:220px; object-fit:contain; }
 
-.card img {
-    width:100%; height:220px; object-fit:contain; margin-bottom: 15px;
-}
-
-/* ORDER BOX */
+/* ORDER */
 .order-box {
-    display:flex; flex-direction:column; gap:10px; margin-top:10px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
 }
 
-.order-box select,
-.order-box button {
-    width:100%; padding:10px; border-radius:8px; border:1px solid #ccc;
-    font-family:Montserrat, sans-serif;
+select, button {
+    padding:10px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    font-family:Montserrat;
 }
 
-.order-box button {
-    background:#0b3a82; color:white; font-weight:bold; border:none;
-    cursor: pointer; transition: background 0.3s;
+button {
+    background:#0b3a82;
+    color:#fff;
+    font-weight:bold;
+    border:none;
 }
-
-.order-box button:hover { background: #092e66; }
 
 /* ABOUT */
 .about {
-    padding:60px 20px; text-align:center; background: #f4f7fb;
+    background:#f4f7fb;
+    padding:50px 20px;
+    text-align:center;
 }
-.about-container { max-width: 800px; margin: auto; }
-.about h2, .about h3 { color: #0b3a82; margin-top: 30px; }
-.about p { line-height: 1.6; color: #333; }
-.founder-msg { font-style: italic; }
 
 /* CONTACT */
 .contact {
-    background:#f4f7fb; padding:30px; border-radius:15px;
-    max-width:500px; margin:auto; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    background:#f4f7fb;
+    padding:25px;
+    border-radius:15px;
+    max-width:500px;
+    margin:auto;
 }
-.contact img { height:50px; margin-bottom: 15px; }
 
 input, textarea {
-    width:100%; padding:10px; margin:10px 0; border-radius:8px;
-    border:1px solid #ccc; font-family:Montserrat, sans-serif;
-    box-sizing: border-box;
-}
-
-.contact button {
-    background:#0b3a82; color:white; padding:12px; border:none;
-    border-radius:30px; width:100%; font-weight: bold; cursor: pointer;
+    width:100%;
+    padding:10px;
+    margin:10px 0;
+    border-radius:8px;
 }
 
 /* FOOTER */
-.footer { background:#0b3a82; color:white; text-align:center; padding:20px; }
+.footer {
+    background:#0b3a82;
+    color:#fff;
+    padding:15px;
+    text-align:center;
+}
 
-/* FLOATING WHATSAPP */
+/* WHATSAPP */
 .wa {
-    position:fixed; bottom:20px; right:20px; background:#25D366;
-    padding:14px; border-radius:50%; color:white; font-size: 1.5rem;
-    text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: transform 0.3s;
-}
-.wa:hover { transform: scale(1.1); }
-
-/* ========================================= */
-/* --- NEW SCROLL REVEAL ANIMATIONS -------- */
-/* ========================================= */
-.reveal {
-    opacity: 0;
-    transform: translateY(50px);
-    transition: all 0.8s ease-out;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    padding:15px;
+    border-radius:50%;
+    color:#fff;
+    text-decoration:none;
 }
 
-.reveal.active {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-/* Delays for the product cards to load one by one */
-.delay-1 { transition-delay: 0.1s; }
-.delay-2 { transition-delay: 0.3s; }
-.delay-3 { transition-delay: 0.5s; }
-
-@media(min-width:768px) {
-    .grid { grid-template-columns:repeat(3,1fr); }
+@media(min-width:768px){
+.grid{ grid-template-columns:repeat(4,1fr); }
 }
 </style>
 </head>
+
 <body>
 
+<!-- NAV -->
 <div class="nav">
-    <img src="LOGO.png" alt="Clenomantra Logo">
-    <a href="https://wa.me/919713545556">Order Now</a>
+<img src="LOGO.png">
+<a href="https://wa.me/919713545556">Order Now</a>
 </div>
 
+<!-- HERO -->
 <div class="hero">
-    <div class="reveal active">
-        <h1>CLENOMANTRA</h1>
-        <p>Har Drop Me Safai Ka Mantra</p>
-        <div class="feature-text">Powerful Cleaning • Trusted Quality • Everyday Freshness</div>
-    </div>
-    <br>
-    <img src="banner.png" alt="Clenomantra Banner" class="reveal delay-1">
+<h1>CLENOMANTRA</h1>
+<p>Har Drop Me Safai Ka Mantra</p>
+<img src="banner.png">
 </div>
 
+<!-- PRODUCTS -->
 <div class="section">
-    <h2 class="reveal">Our Products</h2>
-    <div class="grid">
-        
-        <div class="card reveal delay-1">
-            <img src="Product1.png" alt="Floor Cleaner">
-            <h3>Floor Cleaner</h3>
-            <div class="order-box">
-                <select id="floorSize">
-                    <option>250 ml</option>
-                    <option>500 ml</option>
-                    <option>750 ml</option>
-                    <option>1 Ltr</option>
-                </select>
-                <select id="floorQty">
-                    <option>Qty: 1</option>
-                    <option>Qty: 2</option>
-                    <option>Qty: 3</option>
-                    <option>Qty: 5</option>
-                    <option>Qty: 10</option>
-                </select>
-                <button onclick="orderNow('Floor Cleaner','floorSize','floorQty')">Order Now</button>
-            </div>
-        </div>
-        
-        <div class="card reveal delay-2">
-            <img src="product2.png" alt="Toilet Cleaner">
-            <h3>Toilet Cleaner</h3>
-            <div class="order-box">
-                <select id="toiletSize">
-                    <option>250 ml</option>
-                    <option>500 ml</option>
-                    <option>750 ml</option>
-                    <option>1 Ltr</option>
-                </select>
-                <select id="toiletQty">
-                    <option>Qty: 1</option>
-                    <option>Qty: 2</option>
-                    <option>Qty: 3</option>
-                    <option>Qty: 5</option>
-                    <option>Qty: 10</option>
-                </select>
-                <button onclick="orderNow('Toilet Cleaner','toiletSize','toiletQty')">Order Now</button>
-            </div>
-        </div>
-        
-        <div class="card reveal delay-3">
-            <img src="product3.png" alt="Dishwash Liquid">
-            <h3>Dishwash Liquid</h3>
-            <div class="order-box">
-                <select id="dishSize">
-                    <option>250 ml</option>
-                    <option>500 ml</option>
-                    <option>750 ml</option>
-                    <option>1 Ltr</option>
-                </select>
-                <select id="dishQty">
-                    <option>Qty: 1</option>
-                    <option>Qty: 2</option>
-                    <option>Qty: 3</option>
-                    <option>Qty: 5</option>
-                    <option>Qty: 10</option>
-                </select>
-                <button onclick="orderNow('Dishwash Liquid','dishSize','dishQty')">Order Now</button>
-            </div>
-        </div>
+<h2>Our Products</h2>
 
-    </div>
+<div class="grid">
+
+<!-- FLOOR -->
+<div class="card">
+<img src="Product1.png">
+<h3>Floor Cleaner</h3>
+
+<div class="order-box">
+<select id="fsize">
+<option value="250ml ₹25">250ml ₹25</option>
+<option value="500ml ₹40">500ml ₹40</option>
+<option value="750ml ₹60">750ml ₹60</option>
+<option value="1L ₹75">1L ₹75</option>
+</select>
+
+<select id="fqty">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>5</option>
+<option>10</option>
+</select>
+
+<button onclick="orderNow('Floor Cleaner','fsize','fqty')">Order</button>
+</div>
 </div>
 
+<!-- TOILET -->
+<div class="card">
+<img src="product2.png">
+<h3>Toilet Cleaner</h3>
+
+<div class="order-box">
+<select id="tsize">
+<option value="250ml ₹20">250ml ₹20</option>
+<option value="500ml ₹35">500ml ₹35</option>
+<option value="750ml ₹50">750ml ₹50</option>
+<option value="1L ₹60">1L ₹60</option>
+</select>
+
+<select id="tqty">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>5</option>
+<option>10</option>
+</select>
+
+<button onclick="orderNow('Toilet Cleaner','tsize','tqty')">Order</button>
+</div>
+</div>
+
+<!-- DISHWASH -->
+<div class="card">
+<img src="product3.png">
+<h3>Dishwash Liquid</h3>
+
+<div class="order-box">
+<select id="dsize">
+<option value="250ml ₹30">250ml ₹30</option>
+<option value="500ml ₹50">500ml ₹50</option>
+<option value="750ml ₹70">750ml ₹70</option>
+<option value="1L ₹90">1L ₹90</option>
+</select>
+
+<select id="dqty">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>5</option>
+<option>10</option>
+</select>
+
+<button onclick="orderNow('Dishwash','dsize','dqty')">Order</button>
+</div>
+</div>
+
+<!-- NEW PRODUCT -->
+<div class="card">
+<img src="product4.png">
+<h3>Top Load Detergent</h3>
+
+<div class="order-box">
+<select id="psize">
+<option value="500g ₹60">500g ₹60</option>
+<option value="1kg ₹110">1kg ₹110</option>
+<option value="2kg ₹200">2kg ₹200</option>
+<option value="4kg ₹380">4kg ₹380</option>
+</select>
+
+<select id="pqty">
+<option>1</option>
+<option>2</option>
+<option>3</option>
+<option>5</option>
+</select>
+
+<button onclick="orderNow('Top Load Detergent','psize','pqty')">Order</button>
+</div>
+</div>
+
+</div>
+</div>
+
+<!-- ABOUT -->
 <div class="about">
-    <div class="about-container reveal">
-        <h2>About Clenomantra</h2>
-        <p>
-        Clenomantra is a modern Indian cleaning brand focused on delivering high-performance liquid cleaning solutions. Our products are designed to provide deep hygiene, strong cleaning power, and long-lasting freshness. We aim to make every home cleaner, safer, and healthier.
-        </p>
-        
-        <h3>Founder Message</h3>
-        <p class="founder-msg">
-        "I, <b>Poonam Duggal</b>, founder of Clenomantra, believe that cleanliness is not just a task but a responsibility. Through our products, we aim to bring quality, trust, and hygiene to every household. Together, let us build a cleaner and healthier India."
-        </p>
-    </div>
+<h2>About</h2>
+<p>Clenomantra is a modern Indian cleaning brand delivering powerful cleaning solutions.</p>
+
+<h3>Founder Message</h3>
+<p><b>Poonam Duggal:</b> "Cleanliness is our responsibility. Let's build a cleaner India."</p>
 </div>
 
+<!-- CONTACT -->
 <div class="section">
-    <h2 class="reveal">Contact Us</h2>
-    <div class="contact reveal delay-1">
-        <img src="LOGO.png" alt="Clenomantra Logo">
-        <p>📍 Jalandhar, India</p>
-        <p>📧 clenomantra@gmail.com</p>
-        <p>📞 +91 9713545556</p>
-        <form action="https://formspree.io/f/mgorgvyn" method="POST">
-            <input type="text" name="name" placeholder="Your Name" required>
-            <input type="email" name="email" placeholder="Your Email" required>
-            <textarea name="message" placeholder="Message" rows="4"></textarea>
-            <button type="submit">Send Message</button>
-        </form>
-    </div>
+<div class="contact">
+<img src="LOGO.png" style="height:50px;">
+<p>📍 Jalandhar</p>
+<p>📧 clenomantra@gmail.com</p>
+<p>📞 9713545556</p>
+
+<form action="https://formspree.io/f/mgorgvyn" method="POST">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="Email" required>
+<textarea name="message" placeholder="Message"></textarea>
+<button type="submit">Send</button>
+</form>
+
+</div>
 </div>
 
+<!-- FOOTER -->
 <div class="footer">
-    © 2026 Clenomantra | Made in India 🇮🇳
+© 2026 Clenomantra
 </div>
 
-<a class="wa" href="https://wa.me/919713545556" title="Chat with us">💬</a>
+<a class="wa" href="https://wa.me/919713545556">💬</a>
 
 <script>
-// WhatsApp Order Logic
-function orderNow(product, sizeId, qtyId) {
-    let size = document.getElementById(sizeId).value;
-    let qty = document.getElementById(qtyId).value;
+function orderNow(product,sizeId,qtyId){
+let size=document.getElementById(sizeId).value;
+let qty=document.getElementById(qtyId).value;
 
-    let msg = "Order Request%0AProduct: " + product + 
-              "%0ASize: " + size + 
-              "%0AQuantity: " + qty;
+let msg="Order Request%0AProduct: "+product+
+"%0ASize: "+size+
+"%0AQty: "+qty;
 
-    window.open("https://wa.me/919713545556?text=" + msg);
+window.open("https://wa.me/919713545556?text="+msg);
 }
-
-// Scroll Reveal Animation Logic
-document.addEventListener('DOMContentLoaded', function() {
-    var reveals = document.querySelectorAll('.reveal');
-
-    function reveal() {
-        var windowHeight = window.innerHeight;
-        var elementVisible = 100; // How far scrolling down before animation triggers
-
-        reveals.forEach(function(revealElement) {
-            var elementTop = revealElement.getBoundingClientRect().top;
-            
-            if (elementTop < windowHeight - elementVisible) {
-                revealElement.classList.add('active');
-            }
-        });
-    }
-
-    window.addEventListener('scroll', reveal);
-    
-    // Trigger once on load to show elements already on screen
-    reveal(); 
-});
 </script>
 
 </body>

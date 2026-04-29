@@ -2,168 +2,204 @@
 <head>
 <title>Clenomantra</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
-body{margin:0;font-family:Arial;background:#f4f6f9}
+body{
+margin:0;
+font-family:'Segoe UI',sans-serif;
+background:#f8fafc;
+color:#333;
+}
 
 /* NAVBAR */
 .nav{
-display:flex;justify-content:space-between;
-align-items:center;padding:10px 20px;
-background:#0a58ca;color:white;
-position:sticky;top:0;z-index:1000;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:12px 25px;
+background:rgba(10,88,202,0.95);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
 }
-.nav img{height:40px}
-.nav a{color:white;text-decoration:none;margin:0 10px;font-weight:bold}
-.order-btn{background:#25D366;padding:8px 12px;border-radius:6px;color:white}
-
-/* OFFER BAR */
-.offer{
-background:#25D366;color:white;text-align:center;
-padding:8px;font-weight:bold;
+.nav img{height:42px}
+.nav a{
+color:white;
+text-decoration:none;
+margin:0 12px;
+font-weight:600;
 }
-
-/* BRAND */
-.brand{
-text-align:center;font-size:36px;font-weight:bold;
-background:linear-gradient(90deg,#0a58ca,#25D366);
--webkit-background-clip:text;color:transparent;
-animation:glow 2s infinite alternate;
-}
-@keyframes glow{
-from{letter-spacing:1px}
-to{letter-spacing:5px}
+.order-btn{
+background:#25D366;
+padding:8px 14px;
+border-radius:8px;
+color:white;
 }
 
-/* SLIDER */
-.slider{position:relative}
-.slide{display:none}
-.slide img{width:100%;height:250px;object-fit:cover}
-.active{display:block}
+/* HERO */
+.hero{
+text-align:center;
+padding:40px 20px;
+background:linear-gradient(135deg,#0a58ca,#25D366);
+color:white;
+}
+.hero h1{
+font-size:36px;
+margin:0;
+letter-spacing:2px;
+}
+.hero p{
+opacity:0.9;
+margin-top:10px;
+}
+.hero img{
+width:100%;
+max-width:900px;
+margin-top:20px;
+border-radius:12px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+}
 
 /* SECTION */
-.section{padding:30px;text-align:center}
+.section{
+padding:50px 20px;
+text-align:center;
+}
+.section h2{
+font-size:28px;
+margin-bottom:20px;
+}
 
-/* GRID */
-.grid{display:grid;grid-template-columns:1fr;gap:15px}
+/* PRODUCTS */
+.grid{
+display:grid;
+grid-template-columns:1fr;
+gap:20px;
+}
+
 .card{
-background:white;padding:15px;border-radius:12px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+background:white;
+padding:20px;
+border-radius:16px;
+box-shadow:0 8px 25px rgba(0,0,0,0.08);
 transition:0.3s;
 }
-.card:hover{transform:translateY(-5px)}
-.card img{width:100%;border-radius:10px}
-
-/* FORM */
-input,select,textarea{
-width:100%;padding:10px;margin:8px 0;
-border-radius:6px;border:1px solid #ccc;
+.card:hover{
+transform:translateY(-6px);
 }
-button{
-background:#0a58ca;color:white;
-padding:10px;border:none;border-radius:6px;width:100%;
+.card img{
+width:100%;
+border-radius:12px;
+}
+.card h3{margin:10px 0}
+.card p{color:#666}
+
+.order{
+display:inline-block;
+margin-top:10px;
+background:#0a58ca;
+color:white;
+padding:8px 12px;
+border-radius:6px;
+text-decoration:none;
 }
 
 /* ABOUT */
-.about{background:#eef3f7}
+.about{
+background:#eef4ff;
+}
 
-/* WHATSAPP FLOAT */
-.whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;color:white;padding:12px;
-border-radius:50px;text-decoration:none;
+/* CONTACT */
+input,textarea,select{
+width:100%;
+padding:12px;
+margin:10px 0;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+button{
+background:#0a58ca;
+color:white;
+padding:12px;
+border:none;
+border-radius:8px;
+width:100%;
 }
 
 /* FOOTER */
 .footer{
-background:#0a58ca;color:white;
-text-align:center;padding:15px;
+background:#0a58ca;
+color:white;
+text-align:center;
+padding:15px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:14px;
+border-radius:50px;
+color:white;
+text-decoration:none;
 }
 
 /* DESKTOP */
 @media(min-width:768px){
-.grid{grid-template-columns:repeat(3,1fr)}
-.slide img{height:400px}
+.grid{
+grid-template-columns:repeat(3,1fr);
+}
+.hero h1{font-size:48px}
 }
 </style></head><body><!-- NAVBAR --><div class="nav">
 <img src="LOGO.png">
 <div>
-<a href="#home">Home</a>
+<a href="#">Home</a>
 <a href="#products">Products</a>
 <a href="#about">About</a>
 <a href="#contact">Contact</a>
 </div>
 <a class="order-btn" href="https://wa.me/919713545556">Order</a>
-</div><!-- OFFER --><div class="offer">🔥 Special Offer: Order Now on WhatsApp 🚀</div><!-- BRAND --><div class="brand">CLENOMANTRA</div><!-- SLIDER --><div class="slider">
-<div class="slide active"><img src="banner.png"></div>
-<div class="slide"><img src="Product1.png"></div>
-<div class="slide"><img src="product2.png"></div>
+</div><!-- HERO --><div class="hero">
+<h1>CLENOMANTRA</h1>
+<p>Har Drop Me Safai Ka Mantra</p>
+<img src="banner.png">
 </div><!-- PRODUCTS --><div class="section" id="products">
 <h2>Our Products</h2><div class="grid"><div class="card">
 <img src="Product1.png">
 <h3>Floor Cleaner</h3>
-<p>Deep cleaning + fragrance</p>
-<a class="order-btn" href="https://wa.me/919713545556?text=I want Floor Cleaner">Order Now</a>
+<p>Deep cleaning • Fresh fragrance • Hygiene</p>
+<a class="order" href="https://wa.me/919713545556?text=I want Floor Cleaner">Order Now</a>
 </div><div class="card">
 <img src="product2.png">
 <h3>Toilet Cleaner</h3>
-<p>Kills 99.9% germs</p>
-<a class="order-btn" href="https://wa.me/919713545556?text=I want Toilet Cleaner">Order Now</a>
+<p>Kills 99.9% germs • Thick formula</p>
+<a class="order" href="https://wa.me/919713545556?text=I want Toilet Cleaner">Order Now</a>
 </div><div class="card">
 <img src="product3.png">
 <h3>Dishwash Liquid</h3>
-<p>Strong grease removal</p>
-<a class="order-btn" href="https://wa.me/919713545556?text=I want Dishwash Liquid">Order Now</a>
+<p>Strong grease removal • Soft on hands</p>
+<a class="order" href="https://wa.me/919713545556?text=I want Dishwash Liquid">Order Now</a>
 </div></div>
 </div><!-- ABOUT --><div class="section about" id="about">
-<h2>About Clenomantra</h2><p>
+<h2>About Us</h2><p>
 Clenomantra is a premium Indian cleaning brand delivering powerful,
-safe and affordable cleaning solutions for every home.
+safe and affordable solutions.
 </p><h3>Founder</h3>
-<p><b>Poonam Duggal</b> – Leading the vision of cleanliness and quality.</p></div><!-- CONTACT --><div class="section" id="contact">
+<p><b>Poonam Duggal</b> – Building trust through quality & hygiene.</p>
+</div><!-- CONTACT --><div class="section" id="contact">
 <h2>Contact Us</h2><p>📍 Jalandhar, India</p>
 <p>📧 clenomantra@gmail.com</p>
-<p>📞 9713545556</p><!-- EMAIL FORM --><form action="https://formspree.io/f/mgorgvyn" method="POST">
-<input type="hidden" name="_subject" value="New Clenomantra Lead"><input type="text" name="name" placeholder="Your Name" required>
+<p>📞 9713545556</p><form action="https://formspree.io/f/mgorgvyn" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
 <input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Your Message"></textarea><button type="submit">Send Message</button>
-
-</form><br><br>
-
-<!-- ORDER FORM --><h3>Place Order</h3><form onsubmit="sendOrder(); return false;">
-<input id="name" placeholder="Your Name" required>
-<input id="phone" placeholder="Phone Number" required><select id="product">
-<option>Floor Cleaner</option>
-<option>Toilet Cleaner</option>
-<option>Dishwash Liquid</option>
-</select><input id="qty" placeholder="Quantity"><button>Place Order</button>
-
-</form></div><!-- WHATSAPP FLOAT --><a class="whatsapp" href="https://wa.me/919713545556">WhatsApp</a>
+<textarea name="message" placeholder="Message"></textarea>
+<button>Send Message</button>
+</form></div><!-- WHATSAPP --><a class="whatsapp" href="https://wa.me/919713545556">WhatsApp</a>
 
 <!-- FOOTER --><div class="footer">
 © 2026 Clenomantra | Made in India 🇮🇳
-</div><!-- JS --><script>
-let slides=document.querySelectorAll(".slide");
-let i=0;
-
-setInterval(()=>{
-slides[i].classList.remove("active");
-i=(i+1)%slides.length;
-slides[i].classList.add("active");
-},3000);
-
-function sendOrder(){
-let name=document.getElementById("name").value;
-let phone=document.getElementById("phone").value;
-let product=document.getElementById("product").value;
-let qty=document.getElementById("qty").value;
-
-let url="https://wa.me/919713545556?text="
-+"Order Request%0A"
-+"Name: "+name+"%0A"
-+"Phone: "+phone+"%0A"
-+"Product: "+product+"%0A"
-+"Qty: "+qty;
-
-window.open(url,"_blank");
-}
-</script></body>
+</div></body>
 </html>

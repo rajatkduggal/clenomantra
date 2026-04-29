@@ -3,84 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clenomantra | Premium Cleaning</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+<title>Clenomantra | Premium Cleaning Brand</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
 
 <style>
-body{margin:0;font-family:Poppins;background:#f4f7fb;}
+body{
+margin:0;
+font-family:Poppins;
+background:#eef3f9;
+overflow-x:hidden;
+}
 
-/* NAV */
+/* NAVBAR */
 .nav{
-background:#0a2c6d;
+background:linear-gradient(90deg,#0a2c6d,#114bb1);
 padding:12px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
+color:white;
+box-shadow:0 3px 10px rgba(0,0,0,0.2);
 }
 .nav img{height:45px;}
+
 .btn{
 background:#25D366;
 color:white;
 padding:10px 18px;
-border-radius:25px;
+border-radius:30px;
 text-decoration:none;
+font-weight:600;
 }
 
 /* HERO */
-.hero{text-align:center;padding:30px;}
+.hero{
+text-align:center;
+padding:50px 20px;
+animation:fadeUp 1.5s ease;
+}
 .hero h1{
+font-size:36px;
 color:#0a2c6d;
-font-weight:800;
-animation:fade 2s infinite alternate;
+font-weight:900;
+animation:glow 2s infinite alternate;
 }
-@keyframes fade{
-from{opacity:0.6;} to{opacity:1;}
+@keyframes glow{
+from{opacity:0.7;}
+to{opacity:1;}
 }
+
 .hero img{
 width:100%;
-max-width:900px;
-border-radius:10px;
+max-width:1000px;
+border-radius:15px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
 }
 
 /* PRODUCTS */
 .products{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:20px;
-padding:20px;
+gap:25px;
+padding:30px;
 }
+
 .card{
-background:white;
+background:rgba(255,255,255,0.7);
+backdrop-filter:blur(10px);
+border-radius:20px;
 padding:20px;
-border-radius:12px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
 text-align:center;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+transition:0.3s;
 }
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
 .card img{
 width:100%;
-height:220px;
+height:240px;
 object-fit:contain;
 }
 
-/* ABOUT */
-.about{text-align:center;padding:20px;}
+.card h2{
+color:#0a2c6d;
+}
+
+/* COMPANY */
+.section{
+padding:40px 20px;
+text-align:center;
+}
+
+.section h2{
+color:#0a2c6d;
+font-size:28px;
+}
+
+/* FOUNDER */
+.founder{
+background:white;
+margin:20px;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
 
 /* CONTACT */
-.contact{text-align:center;padding:20px;}
+.contact{
+background:#fff;
+padding:30px;
+text-align:center;
+}
+
 input,textarea{
 width:90%;
-padding:10px;
+padding:12px;
 margin:10px;
-border-radius:8px;
+border-radius:10px;
 border:1px solid #ccc;
 }
+
 button{
 background:#0a2c6d;
 color:white;
-padding:10px 20px;
+padding:12px 25px;
 border:none;
-border-radius:20px;
+border-radius:30px;
+font-size:16px;
+cursor:pointer;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
 }
 
 /* FOOTER */
@@ -91,6 +159,7 @@ text-align:center;
 padding:15px;
 }
 </style>
+
 </head>
 
 <body>
@@ -98,12 +167,12 @@ padding:15px;
 <!-- NAV -->
 <div class="nav">
 <img src="LOGO.png">
-<a href="https://wa.me/919713545556" class="btn">Order</a>
+<a href="https://wa.me/919713545556" class="btn">Order Now</a>
 </div>
 
 <!-- HERO -->
 <div class="hero">
-<h1>Clenomantra – Next Level Cleaning</h1>
+<h1>Clenomantra – Next Level Liquid Cleaning</h1>
 <img src="banner.png">
 </div>
 
@@ -130,28 +199,45 @@ padding:15px;
 
 </div>
 
-<!-- ABOUT -->
-<div class="about">
-<h2>Founder</h2>
-<p><b>Poonam Duggal</b> – Founder of Clenomantra</p>
+<!-- COMPANY BRIEF -->
+<div class="section">
+<h2>About Clenomantra</h2>
+<p>
+Clenomantra is a fast-growing Indian cleaning brand dedicated to delivering powerful, affordable, and hygienic solutions.
+We believe every home deserves deep cleaning, freshness, and protection from germs.
+Our products are specially designed to provide maximum performance with safe usage.
+</p>
+</div>
+
+<!-- FOUNDER MESSAGE -->
+<div class="founder">
+<h2>Founder’s Public Appeal</h2>
+<p>
+I, <b>Poonam Duggal</b>, founder of Clenomantra, appeal to every household to choose cleanliness as a daily habit.
+Our mission is not just to sell products but to promote hygiene, safety, and a healthier lifestyle for every family.
+Together, let’s build a cleaner and safer India.
+</p>
 </div>
 
 <!-- CONTACT -->
 <div class="contact">
-<h2>Contact</h2>
+<h2>Contact Us</h2>
 
 <form action="https://formspree.io/f/mgorgvyn" method="POST">
-<input type="text" name="name" placeholder="Name" required><br>
-<input type="email" name="email" placeholder="Email" required><br>
-<textarea name="message" placeholder="Message"></textarea><br>
-<button type="submit">Send</button>
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="email" name="email" placeholder="Your Email" required><br>
+<textarea name="message" placeholder="Your Message"></textarea><br>
+<button type="submit">Send Message</button>
 </form>
 
 </div>
 
+<!-- FLOAT WHATSAPP -->
+<a href="https://wa.me/919713545556" class="whatsapp">💬</a>
+
 <!-- FOOTER -->
 <div class="footer">
-© Clenomantra | Made in India 🇮🇳
+© 2026 Clenomantra | Made in India 🇮🇳
 </div>
 
 </body>

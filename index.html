@@ -1,205 +1,223 @@
-<!DOCTYPE html><html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Clenomantra</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"><style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Clenomantra | Premium Cleaning Products</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+
+<style>
 body{
 margin:0;
-font-family:'Segoe UI',sans-serif;
-background:#f8fafc;
-color:#333;
+font-family:Poppins;
+background:#f4f7fb;
 }
 
 /* NAVBAR */
 .nav{
+background:#0a2c6d;
+padding:12px 20px;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 25px;
-background:rgba(10,88,202,0.95);
-backdrop-filter:blur(10px);
-position:sticky;
-top:0;
-z-index:1000;
-}
-.nav img{height:42px}
-.nav a{
 color:white;
-text-decoration:none;
-margin:0 12px;
-font-weight:600;
 }
-.order-btn{
+
+.nav img{
+height:45px;
+}
+
+.btn{
 background:#25D366;
-padding:8px 14px;
-border-radius:8px;
 color:white;
+padding:10px 18px;
+border-radius:25px;
+text-decoration:none;
+font-weight:600;
 }
 
 /* HERO */
 .hero{
-text-align:center;
 padding:40px 20px;
-background:linear-gradient(135deg,#0a58ca,#25D366);
-color:white;
+text-align:center;
 }
+
 .hero h1{
-font-size:36px;
-margin:0;
-letter-spacing:2px;
+font-size:32px;
+font-weight:800;
+color:#0a2c6d;
+animation: glow 2s infinite alternate;
 }
-.hero p{
-opacity:0.9;
-margin-top:10px;
+
+@keyframes glow{
+from{opacity:0.7;}
+to{opacity:1;}
 }
+
 .hero img{
 width:100%;
 max-width:900px;
-margin-top:20px;
 border-radius:12px;
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
-
-/* SECTION */
-.section{
-padding:50px 20px;
-text-align:center;
-}
-.section h2{
-font-size:28px;
-margin-bottom:20px;
 }
 
 /* PRODUCTS */
-.grid{
+.products{
 display:grid;
-grid-template-columns:1fr;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
 gap:20px;
+padding:20px;
 }
 
 .card{
 background:white;
+border-radius:15px;
 padding:20px;
-border-radius:16px;
-box-shadow:0 8px 25px rgba(0,0,0,0.08);
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+text-align:center;
 transition:0.3s;
 }
+
 .card:hover{
-transform:translateY(-6px);
+transform:translateY(-5px);
 }
+
 .card img{
 width:100%;
-border-radius:12px;
+height:250px;
+object-fit:contain;
 }
-.card h3{margin:10px 0}
-.card p{color:#666}
 
-.order{
-display:inline-block;
-margin-top:10px;
-background:#0a58ca;
-color:white;
-padding:8px 12px;
-border-radius:6px;
-text-decoration:none;
+.card h2{
+color:#0a2c6d;
+}
+
+ul{
+text-align:left;
 }
 
 /* ABOUT */
 .about{
-background:#eef4ff;
+padding:30px;
+text-align:center;
+}
+
+.about h2{
+color:#0a2c6d;
 }
 
 /* CONTACT */
-input,textarea,select{
-width:100%;
-padding:12px;
-margin:10px 0;
+.contact{
+background:#fff;
+padding:30px;
+text-align:center;
+}
+
+input,textarea{
+width:90%;
+padding:10px;
+margin:10px;
 border-radius:8px;
-border:1px solid #ddd;
+border:1px solid #ccc;
 }
 
 button{
-background:#0a58ca;
+background:#0a2c6d;
 color:white;
-padding:12px;
+padding:12px 25px;
 border:none;
-border-radius:8px;
-width:100%;
+border-radius:25px;
+font-size:16px;
 }
 
 /* FOOTER */
 .footer{
-background:#0a58ca;
+background:#0a2c6d;
 color:white;
 text-align:center;
 padding:15px;
 }
+</style>
 
-/* WHATSAPP */
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:14px;
-border-radius:50px;
-color:white;
-text-decoration:none;
-}
+</head>
 
-/* DESKTOP */
-@media(min-width:768px){
-.grid{
-grid-template-columns:repeat(3,1fr);
-}
-.hero h1{font-size:48px}
-}
-</style></head><body><!-- NAVBAR --><div class="nav">
-<img src="LOGO.png">
-<div>
-<a href="#">Home</a>
-<a href="#products">Products</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+<body>
+
+<!-- NAVBAR -->
+<div class="nav">
+<img src="logo.png">
+<a href="https://wa.me/919713545556" class="btn">Order Now</a>
 </div>
-<a class="order-btn" href="https://wa.me/919713545556">Order</a>
-</div><!-- HERO --><div class="hero">
-<h1>CLENOMANTRA</h1>
-<p>Har Drop Me Safai Ka Mantra</p>
-<img src="banner.png">
-</div><!-- PRODUCTS --><div class="section" id="products">
-<h2>Our Products</h2><div class="grid"><div class="card">
-<img src="Product1.png">
-<h3>Floor Cleaner</h3>
-<p>Deep cleaning • Fresh fragrance • Hygiene</p>
-<a class="order" href="https://wa.me/919713545556?text=I want Floor Cleaner">Order Now</a>
-</div><div class="card">
-<img src="product2.png">
-<h3>Toilet Cleaner</h3>
-<p>Kills 99.9% germs • Thick formula</p>
-<a class="order" href="https://wa.me/919713545556?text=I want Toilet Cleaner">Order Now</a>
-</div><div class="card">
-<img src="product3.png">
-<h3>Dishwash Liquid</h3>
-<p>Strong grease removal • Soft on hands</p>
-<a class="order" href="https://wa.me/919713545556?text=I want Dishwash Liquid">Order Now</a>
-</div></div>
-</div><!-- ABOUT --><div class="section about" id="about">
-<h2>About Us</h2><p>
-Clenomantra is a premium Indian cleaning brand delivering powerful,
-safe and affordable solutions.
-</p><h3>Founder</h3>
-<p><b>Poonam Duggal</b> – Building trust through quality & hygiene.</p>
-</div><!-- CONTACT --><div class="section" id="contact">
-<h2>Contact Us</h2><p>📍 Jalandhar, India</p>
-<p>📧 clenomantra@gmail.com</p>
-<p>📞 9713545556</p><form action="https://formspree.io/f/mgorgvyn" method="POST">
-<input type="text" name="name" placeholder="Your Name" required>
-<input type="email" name="email" placeholder="Your Email" required>
-<textarea name="message" placeholder="Message"></textarea>
-<button>Send Message</button>
-</form></div><!-- WHATSAPP --><a class="whatsapp" href="https://wa.me/919713545556">WhatsApp</a>
 
-<!-- FOOTER --><div class="footer">
+<!-- HERO -->
+<div class="hero">
+<h1>Clenomantra – Next Level Liquid Cleaning</h1>
+<img src="banner.png">
+</div>
+
+<!-- PRODUCTS -->
+<div class="products">
+
+<div class="card">
+<img src="floor-cleaner.png">
+<h2>Floor Cleaner</h2>
+<ul>
+<li>Deep cleaning</li>
+<li>Long lasting fragrance</li>
+<li>Removes tough dirt</li>
+<li>Safe on all floors</li>
+</ul>
+</div>
+
+<div class="card">
+<img src="toilet-cleaner.png">
+<h2>Toilet Cleaner</h2>
+<ul>
+<li>Removes stains</li>
+<li>Kills 99.9% germs</li>
+<li>Thick formula</li>
+<li>Fresh fragrance</li>
+</ul>
+</div>
+
+<div class="card">
+<img src="dishwash-liquid.png">
+<h2>Dishwash Liquid</h2>
+<ul>
+<li>Cuts grease</li>
+<li>Soft on hands</li>
+<li>Lemon fresh</li>
+<li>Sparkling clean</li>
+</ul>
+</div>
+
+</div>
+
+<!-- ABOUT -->
+<div class="about">
+<h2>About Founder</h2>
+<p><b>Poonam Duggal</b> is the founder of Clenomantra.  
+Our mission is to provide powerful, affordable and hygienic cleaning solutions for every home.</p>
+</div>
+
+<!-- CONTACT FORM -->
+<div class="contact">
+<h2>Contact Us</h2>
+
+<form action="https://formspree.io/f/mgorgvyn" method="POST">
+<input type="text" name="name" placeholder="Your Name" required><br>
+<input type="email" name="email" placeholder="Your Email" required><br>
+<textarea name="message" placeholder="Message"></textarea><br>
+<button type="submit">Send Message</button>
+</form>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
 © 2026 Clenomantra | Made in India 🇮🇳
-</div></body>
+</div>
+
+</body>
 </html>

@@ -18,6 +18,10 @@ body { margin:0; font-family:Montserrat, sans-serif; background:#fff; }
 .nav a {
     background:#22c55e; padding:8px 16px; border-radius:30px;
     color:white; text-decoration:none; font-weight: 600;
+    transition: transform 0.3s, background 0.3s;
+}
+.nav a:hover {
+    background: #1ea34d; transform: scale(1.05);
 }
 
 /* HERO */
@@ -31,14 +35,9 @@ body { margin:0; font-family:Montserrat, sans-serif; background:#fff; }
 
 /* FEATURE BANNER */
 .feature-text {
-    background: #092e66;
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 30px;
-    font-weight: 600;
-    margin-bottom: 20px;
-    font-size: 0.9rem;
-    letter-spacing: 0.5px;
+    background: #092e66; display: inline-block; padding: 10px 20px;
+    border-radius: 30px; font-weight: 600; margin-bottom: 20px;
+    font-size: 0.9rem; letter-spacing: 0.5px;
 }
 
 /* PRODUCTS */
@@ -51,6 +50,10 @@ body { margin:0; font-family:Montserrat, sans-serif; background:#fff; }
 .card {
     background:#f4f7fb; padding:20px; border-radius:15px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover {
+    transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
 .card img {
@@ -89,7 +92,6 @@ body { margin:0; font-family:Montserrat, sans-serif; background:#fff; }
     background:#f4f7fb; padding:30px; border-radius:15px;
     max-width:500px; margin:auto; box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
-
 .contact img { height:50px; margin-bottom: 15px; }
 
 input, textarea {
@@ -104,15 +106,35 @@ input, textarea {
 }
 
 /* FOOTER */
-.footer {
-    background:#0b3a82; color:white; text-align:center; padding:20px;
-}
+.footer { background:#0b3a82; color:white; text-align:center; padding:20px; }
 
+/* FLOATING WHATSAPP */
 .wa {
     position:fixed; bottom:20px; right:20px; background:#25D366;
     padding:14px; border-radius:50%; color:white; font-size: 1.5rem;
     text-decoration: none; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: transform 0.3s;
 }
+.wa:hover { transform: scale(1.1); }
+
+/* ========================================= */
+/* --- NEW SCROLL REVEAL ANIMATIONS -------- */
+/* ========================================= */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s ease-out;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Delays for the product cards to load one by one */
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.3s; }
+.delay-3 { transition-delay: 0.5s; }
 
 @media(min-width:768px) {
     .grid { grid-template-columns:repeat(3,1fr); }
@@ -127,18 +149,20 @@ input, textarea {
 </div>
 
 <div class="hero">
-    <h1>CLENOMANTRA</h1>
-    <p>Har Drop Me Safai Ka Mantra</p>
-    <div class="feature-text">Powerful Cleaning • Trusted Quality • Everyday Freshness</div>
+    <div class="reveal active">
+        <h1>CLENOMANTRA</h1>
+        <p>Har Drop Me Safai Ka Mantra</p>
+        <div class="feature-text">Powerful Cleaning • Trusted Quality • Everyday Freshness</div>
+    </div>
     <br>
-    <img src="banner.png" alt="Clenomantra Banner">
+    <img src="banner.png" alt="Clenomantra Banner" class="reveal delay-1">
 </div>
 
 <div class="section">
-    <h2>Our Products</h2>
+    <h2 class="reveal">Our Products</h2>
     <div class="grid">
         
-        <div class="card">
+        <div class="card reveal delay-1">
             <img src="Product1.png" alt="Floor Cleaner">
             <h3>Floor Cleaner</h3>
             <div class="order-box">
@@ -159,7 +183,7 @@ input, textarea {
             </div>
         </div>
         
-        <div class="card">
+        <div class="card reveal delay-2">
             <img src="product2.png" alt="Toilet Cleaner">
             <h3>Toilet Cleaner</h3>
             <div class="order-box">
@@ -180,7 +204,7 @@ input, textarea {
             </div>
         </div>
         
-        <div class="card">
+        <div class="card reveal delay-3">
             <img src="product3.png" alt="Dishwash Liquid">
             <h3>Dishwash Liquid</h3>
             <div class="order-box">
@@ -205,7 +229,7 @@ input, textarea {
 </div>
 
 <div class="about">
-    <div class="about-container">
+    <div class="about-container reveal">
         <h2>About Clenomantra</h2>
         <p>
         Clenomantra is a modern Indian cleaning brand focused on delivering high-performance liquid cleaning solutions. Our products are designed to provide deep hygiene, strong cleaning power, and long-lasting freshness. We aim to make every home cleaner, safer, and healthier.
@@ -219,8 +243,8 @@ input, textarea {
 </div>
 
 <div class="section">
-    <h2>Contact Us</h2>
-    <div class="contact">
+    <h2 class="reveal">Contact Us</h2>
+    <div class="contact reveal delay-1">
         <img src="LOGO.png" alt="Clenomantra Logo">
         <p>📍 Jalandhar, India</p>
         <p>📧 clenomantra@gmail.com</p>
@@ -241,6 +265,7 @@ input, textarea {
 <a class="wa" href="https://wa.me/919713545556" title="Chat with us">💬</a>
 
 <script>
+// WhatsApp Order Logic
 function orderNow(product, sizeId, qtyId) {
     let size = document.getElementById(sizeId).value;
     let qty = document.getElementById(qtyId).value;
@@ -251,6 +276,29 @@ function orderNow(product, sizeId, qtyId) {
 
     window.open("https://wa.me/919713545556?text=" + msg);
 }
+
+// Scroll Reveal Animation Logic
+document.addEventListener('DOMContentLoaded', function() {
+    var reveals = document.querySelectorAll('.reveal');
+
+    function reveal() {
+        var windowHeight = window.innerHeight;
+        var elementVisible = 100; // How far scrolling down before animation triggers
+
+        reveals.forEach(function(revealElement) {
+            var elementTop = revealElement.getBoundingClientRect().top;
+            
+            if (elementTop < windowHeight - elementVisible) {
+                revealElement.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', reveal);
+    
+    // Trigger once on load to show elements already on screen
+    reveal(); 
+});
 </script>
 
 </body>

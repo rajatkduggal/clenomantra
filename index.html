@@ -3,64 +3,83 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clenomantra</title><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"><style>
-
-body{margin:0;font-family:Montserrat;background:#f4f7fb}
+body{margin:0;font-family:Montserrat;background:#fff}
 
 /* NAV */
 .nav{
 display:flex;justify-content:space-between;align-items:center;
-padding:15px 20px;background:#0b3a82;color:white;
+padding:14px 20px;background:#0b3a82;color:white;
 }
-.nav img{height:45px}
+.nav img{height:42px}
 .nav a{
-background:#22c55e;padding:10px 18px;border-radius:30px;
-color:white;text-decoration:none;font-weight:bold;
+background:#22c55e;padding:8px 16px;border-radius:30px;
+color:white;text-decoration:none;
 }
 
 /* HERO */
 .hero{
-background:linear-gradient(135deg,#0b3a82,#1e6de0);
-color:white;text-align:center;padding:70px 20px;
+background:#0b3a82;color:white;text-align:center;
+padding:60px 20px;
 }
-.hero h1{
-font-size:48px;
-animation:glow 2s infinite alternate;
-}
-@keyframes glow{
-from{text-shadow:0 0 10px #fff}
-to{text-shadow:0 0 25px #22c55e}
-}
-.hero img{width:100%;max-width:900px;margin-top:20px}
+.hero h1{font-size:48px}
+.hero img{margin-top:20px;width:100%;max-width:900px}
 
-/* SECTION */
-.section{padding:50px 20px;text-align:center}
+/* PRODUCTS */
+.section{padding:40px 20px;text-align:center}
 
-/* GRID */
 .grid{
-display:grid;
-grid-template-columns:1fr;
-gap:25px;
+display:grid;grid-template-columns:1fr;gap:20px;
 }
 
-/* CARD */
 .card{
-background:white;
-padding:20px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
+background:#f4f7fb;padding:20px;border-radius:15px;
 }
 
 .card img{
-width:100%;
-height:220px;
-object-fit:contain;
+width:100%;height:220px;object-fit:contain;
 }
 
-/* SELECT + BUTTON */
-select,button{
+/* ORDER BOX */
+.order-box{
+display:flex;
+flex-direction:column;
+gap:10px;
+margin-top:10px;
+}
+
+.order-box select,
+.order-box button{
 width:100%;
 padding:10px;
-margin-top:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.order-box button{
+background:#0b3a82;
+color:white;
+font-weight:bold;
+border:none;
+}
+
+/* ABOUT */
+.about{padding:40px 20px;text-align:center}
+
+/* CONTACT */
+.contact{
+background:#f4f7fb;
+padding:20px;
+border-radius:15px;
+max-width:500px;
+margin:auto;
+}
+
+.contact img{height:50px}
+
+input,textarea{
+width:100%;
+padding:10px;
+margin:10px 0;
 border-radius:8px;
 border:1px solid #ccc;
 }
@@ -68,35 +87,11 @@ border:1px solid #ccc;
 button{
 background:#0b3a82;
 color:white;
-font-weight:bold;
+padding:10px;
 border:none;
-cursor:pointer;
+border-radius:30px;
+width:100%;
 }
-
-/* TOTAL */
-.total{
-font-weight:bold;
-margin-top:10px;
-color:#0b3a82;
-}
-
-/* PAYMENT */
-.payment img{
-width:220px;
-margin:15px 0;
-}
-
-/* CONTACT */
-.contact{
-background:white;
-padding:20px;
-border-radius:15px;
-max-width:500px;
-margin:auto;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-}
-
-.contact img{height:60px}
 
 /* FOOTER */
 .footer{
@@ -106,22 +101,19 @@ text-align:center;
 padding:15px;
 }
 
-/* WHATSAPP FLOAT */
 .wa{
 position:fixed;
 bottom:20px;
 right:20px;
 background:#25D366;
-padding:15px;
+padding:14px;
 border-radius:50%;
 color:white;
-font-size:20px;
 }
 
 @media(min-width:768px){
 .grid{grid-template-columns:repeat(3,1fr)}
 }
-
 </style></head><body><!-- NAV --><div class="nav">
 <img src="LOGO.png">
 <a href="https://wa.me/919713545556">Order Now</a>
@@ -132,122 +124,93 @@ font-size:20px;
 </div><!-- PRODUCTS --><div class="section">
 <h2>Our Products</h2><div class="grid"><!-- FLOOR --><div class="card">
 <img src="Product1.png">
-<h3>Floor Cleaner</h3><select id="floorSize" onchange="updatePrice('floor')">
-<option value="25">250ml - ₹25</option>
-<option value="40">500ml - ₹40</option>
-<option value="60">750ml - ₹60</option>
-<option value="75">1Ltr - ₹75</option>
-</select><select id="floorQty" onchange="updatePrice('floor')">
-<option value="1">Qty 1</option>
-<option value="2">Qty 2</option>
-<option value="3">Qty 3</option>
-<option value="5">Qty 5</option>
-</select><p id="floorTotal" class="total">Total: ₹25</p><button onclick="orderNow('Floor Cleaner','floorSize','floorQty','floor')">
+<h3>Floor Cleaner</h3><div class="order-box">
+<select id="floorSize">
+<option>250 ml</option>
+<option>500 ml</option>
+<option>750 ml</option>
+<option>1 Ltr</option>
+</select><select id="floorQty">
+<option>Qty: 1</option>
+<option>Qty: 2</option>
+<option>Qty: 3</option>
+<option>Qty: 5</option>
+<option>Qty: 10</option>
+</select><button onclick="orderNow('Floor Cleaner','floorSize','floorQty')">
 Order Now
 </button>
+</div>
 </div><!-- TOILET --><div class="card">
 <img src="product2.png">
-<h3>Toilet Cleaner</h3><select id="toiletSize" onchange="updatePrice('toilet')">
-<option value="20">250ml - ₹20</option>
-<option value="35">500ml - ₹35</option>
-<option value="50">750ml - ₹50</option>
-<option value="60">1Ltr - ₹60</option>
-</select><select id="toiletQty" onchange="updatePrice('toilet')">
-<option value="1">Qty 1</option>
-<option value="2">Qty 2</option>
-<option value="3">Qty 3</option>
-<option value="5">Qty 5</option>
-</select><p id="toiletTotal" class="total">Total: ₹20</p><button onclick="orderNow('Toilet Cleaner','toiletSize','toiletQty','toilet')">
+<h3>Toilet Cleaner</h3><div class="order-box">
+<select id="toiletSize">
+<option>250 ml</option>
+<option>500 ml</option>
+<option>750 ml</option>
+<option>1 Ltr</option>
+</select><select id="toiletQty">
+<option>Qty: 1</option>
+<option>Qty: 2</option>
+<option>Qty: 3</option>
+<option>Qty: 5</option>
+<option>Qty: 10</option>
+</select><button onclick="orderNow('Toilet Cleaner','toiletSize','toiletQty')">
 Order Now
 </button>
+</div>
 </div><!-- DISHWASH --><div class="card">
 <img src="product3.png">
-<h3>Dishwash Liquid</h3><select id="dishSize" onchange="updatePrice('dish')">
-<option value="30">250ml - ₹30</option>
-<option value="50">500ml - ₹50</option>
-<option value="70">750ml - ₹70</option>
-<option value="90">1Ltr - ₹90</option>
-</select><select id="dishQty" onchange="updatePrice('dish')">
-<option value="1">Qty 1</option>
-<option value="2">Qty 2</option>
-<option value="3">Qty 3</option>
-<option value="5">Qty 5</option>
-</select><p id="dishTotal" class="total">Total: ₹30</p><button onclick="orderNow('Dishwash Liquid','dishSize','dishQty','dish')">
+<h3>Dishwash Liquid</h3><div class="order-box">
+<select id="dishSize">
+<option>250 ml</option>
+<option>500 ml</option>
+<option>750 ml</option>
+<option>1 Ltr</option>
+</select><select id="dishQty">
+<option>Qty: 1</option>
+<option>Qty: 2</option>
+<option>Qty: 3</option>
+<option>Qty: 5</option>
+<option>Qty: 10</option>
+</select><button onclick="orderNow('Dishwash Liquid','dishSize','dishQty')">
 Order Now
 </button>
+</div>
 </div></div>
-</div><!-- PAYMENT --><div class="section payment">
-<h2>Scan & Pay</h2><img src="QR.jpg"><h3 id="finalAmount">Total Payable: ₹0</h3><button onclick="confirmPayment()">I Have Paid ✅</button>
-
-</div><!-- ABOUT --><div class="section">
+</div><!-- ABOUT --><div class="about">
 <h2>About Clenomantra</h2>
 <p>
-Clenomantra is a premium Indian cleaning brand delivering powerful,
-safe and affordable cleaning solutions for every home.
+Clenomantra is a modern Indian cleaning brand focused on powerful,
+affordable and hygienic solutions.
 </p><h3>Founder Message</h3>
 <p>
-I, <b>Poonam Duggal</b>, believe cleanliness is not just a habit but a responsibility.
-Our mission is to bring trust, hygiene and quality to every household in India.
+I, <b>Poonam Duggal</b>, believe cleanliness is a responsibility.
+Our mission is to provide quality and trust to every home.
 </p>
 </div><!-- CONTACT --><div class="section">
 <h2>Contact Us</h2><div class="contact">
-<img src="LOGO.png">
-<p>📍 Jalandhar, India</p>
+<img src="LOGO.png"><p>📍 Jalandhar, India</p>
 <p>📧 clenomantra@gmail.com</p>
-<p>📞 +91 9713545556</p>
-</div></div><!-- FOOTER --><div class="footer">
-© 2026 Clenomantra | Made in India
+<p>📞 +91 9713545556</p><form action="https://formspree.io/f/mgorgvyn" method="POST">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" placeholder="Message"></textarea>
+<button type="submit">Send Message</button>
+</form></div>
+</div><!-- FOOTER --><div class="footer">
+© 2026 Clenomantra
 </div><a class="wa" href="https://wa.me/919713545556">💬</a>
 
 <script>
-
-let finalTotal=0;
-
-function updatePrice(type){
-let price=document.getElementById(type+"Size").value;
-let qty=document.getElementById(type+"Qty").value;
-
-let total=price*qty;
-
-document.getElementById(type+"Total").innerText="Total: ₹"+total;
-
-calculateTotal();
-}
-
-function calculateTotal(){
-let ids=["floorTotal","toiletTotal","dishTotal"];
-let sum=0;
-
-ids.forEach(id=>{
-let val=parseInt(document.getElementById(id).innerText.replace("Total: ₹",""));
-sum+=val;
-});
-
-finalTotal=sum;
-document.getElementById("finalAmount").innerText="Total Payable: ₹"+sum;
-}
-
-function orderNow(product,sizeId,qtyId,type){
-
-let size=document.getElementById(sizeId).selectedOptions[0].text;
+function orderNow(product,sizeId,qtyId){
+let size=document.getElementById(sizeId).value;
 let qty=document.getElementById(qtyId).value;
-let total=document.getElementById(type+"Total").innerText;
 
 let msg="Order Request%0AProduct: "+product+
 "%0ASize: "+size+
-"%0AQuantity: "+qty+
-"%0A"+total;
+"%0AQuantity: "+qty;
 
 window.open("https://wa.me/919713545556?text="+msg);
 }
-
-function confirmPayment(){
-
-let msg="Payment Done ✅%0ATotal Paid: ₹"+finalTotal+
-"%0APlease confirm my order";
-
-window.open("https://wa.me/919713545556?text="+msg);
-}
-
 </script></body>
 </html>

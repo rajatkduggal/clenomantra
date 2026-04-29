@@ -12,108 +12,99 @@ body { margin:0; font-family:Montserrat; background:#fff; }
 
 /* NAV */
 .nav {
-    display:flex; justify-content:space-between; align-items:center;
-    padding:15px 20px; background:#0b3a82;
+display:flex; justify-content:space-between;
+padding:15px 20px; background:#0b3a82;
 }
 .nav img { height:45px; }
-
 .nav a {
-    background:#22c55e; padding:10px 18px;
-    border-radius:30px; color:#fff; text-decoration:none;
-    font-weight:600;
+background:#22c55e; padding:10px 18px;
+border-radius:30px; color:#fff; text-decoration:none;
 }
 
 /* HERO */
 .hero {
-    background:#0b3a82; color:#fff;
-    text-align:center; padding:60px 20px;
+background:#0b3a82; color:#fff;
+text-align:center; padding:60px 20px;
 }
-.hero h1 { font-size:46px; font-weight:800; }
-.hero p { margin:10px 0; }
-.hero img { width:100%; max-width:900px; border-radius:10px; }
+.brand {
+font-size:52px;
+font-weight:800;
+background:linear-gradient(90deg,#fff,#22c55e);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+}
 
-/* SECTION */
+.banner img {
+width:100%; max-width:1100px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 15px 30px rgba(0,0,0,0.3);
+}
+
+/* PRODUCTS */
 .section { padding:60px 20px; text-align:center; }
 
 .grid {
-    display:grid;
-    grid-template-columns:1fr;
-    gap:25px;
-    max-width:1100px;
-    margin:auto;
+display:grid;
+grid-template-columns:1fr;
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
-/* CARD */
 .card {
-    background:#f4f7fb;
-    padding:20px;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+background:#f4f7fb;
+padding:20px;
+border-radius:15px;
 }
-.card img { width:100%; height:220px; object-fit:contain; }
+
+.card img { height:200px; width:100%; object-fit:contain; }
 
 /* ORDER */
 .order-box {
-    display:flex;
-    flex-direction:column;
-    gap:10px;
+display:flex;
+flex-direction:column;
+gap:10px;
 }
 
 select, button {
-    padding:10px;
-    border-radius:8px;
-    border:1px solid #ccc;
-    font-family:Montserrat;
+padding:10px;
+border-radius:8px;
 }
 
 button {
-    background:#0b3a82;
-    color:#fff;
-    font-weight:bold;
-    border:none;
+background:#0b3a82;
+color:white;
+font-weight:bold;
+border:none;
 }
 
-/* ABOUT */
-.about {
-    background:#f4f7fb;
-    padding:50px 20px;
-    text-align:center;
+/* CART */
+.cart {
+position:fixed;
+bottom:20px;
+left:20px;
+background:#0b3a82;
+color:white;
+padding:15px;
+border-radius:10px;
 }
 
 /* CONTACT */
 .contact {
-    background:#f4f7fb;
-    padding:25px;
-    border-radius:15px;
-    max-width:500px;
-    margin:auto;
-}
-
-input, textarea {
-    width:100%;
-    padding:10px;
-    margin:10px 0;
-    border-radius:8px;
+background:#f4f7fb;
+padding:20px;
+max-width:500px;
+margin:auto;
+border-radius:15px;
 }
 
 /* FOOTER */
 .footer {
-    background:#0b3a82;
-    color:#fff;
-    padding:15px;
-    text-align:center;
-}
-
-/* WHATSAPP */
-.wa {
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    background:#25D366;
-    padding:15px;
-    border-radius:50%;
-    color:#fff;
-    text-decoration:none;
+background:#0b3a82;
+color:white;
+text-align:center;
+padding:15px;
 }
 
 @media(min-width:768px){
@@ -132,9 +123,12 @@ input, textarea {
 
 <!-- HERO -->
 <div class="hero">
-<h1>CLENOMANTRA</h1>
+<div class="brand">CLENOMANTRA</div>
 <p>Har Drop Me Safai Ka Mantra</p>
-<img src="banner.png">
+
+<div class="banner">
+<img src="Banner1.png">
+</div>
 </div>
 
 <!-- PRODUCTS -->
@@ -150,21 +144,20 @@ input, textarea {
 
 <div class="order-box">
 <select id="fsize">
-<option value="250ml ₹25">250ml ₹25</option>
-<option value="500ml ₹40">500ml ₹40</option>
-<option value="750ml ₹60">750ml ₹60</option>
-<option value="1L ₹75">1L ₹75</option>
+<option value="25">250ml ₹25</option>
+<option value="40">500ml ₹40</option>
+<option value="60">750ml ₹60</option>
+<option value="75">1L ₹75</option>
 </select>
 
 <select id="fqty">
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>5</option>
-<option>10</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="5">5</option>
 </select>
 
-<button onclick="orderNow('Floor Cleaner','fsize','fqty')">Order</button>
+<button onclick="addToCart('Floor Cleaner','fsize','fqty')">Add</button>
 </div>
 </div>
 
@@ -175,21 +168,20 @@ input, textarea {
 
 <div class="order-box">
 <select id="tsize">
-<option value="250ml ₹20">250ml ₹20</option>
-<option value="500ml ₹35">500ml ₹35</option>
-<option value="750ml ₹50">750ml ₹50</option>
-<option value="1L ₹60">1L ₹60</option>
+<option value="20">250ml ₹20</option>
+<option value="35">500ml ₹35</option>
+<option value="50">750ml ₹50</option>
+<option value="60">1L ₹60</option>
 </select>
 
 <select id="tqty">
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>5</option>
-<option>10</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="5">5</option>
 </select>
 
-<button onclick="orderNow('Toilet Cleaner','tsize','tqty')">Order</button>
+<button onclick="addToCart('Toilet Cleaner','tsize','tqty')">Add</button>
 </div>
 </div>
 
@@ -200,95 +192,89 @@ input, textarea {
 
 <div class="order-box">
 <select id="dsize">
-<option value="250ml ₹30">250ml ₹30</option>
-<option value="500ml ₹50">500ml ₹50</option>
-<option value="750ml ₹70">750ml ₹70</option>
-<option value="1L ₹90">1L ₹90</option>
+<option value="30">250ml ₹30</option>
+<option value="50">500ml ₹50</option>
+<option value="70">750ml ₹70</option>
+<option value="90">1L ₹90</option>
 </select>
 
 <select id="dqty">
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>5</option>
-<option>10</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="5">5</option>
 </select>
 
-<button onclick="orderNow('Dishwash','dsize','dqty')">Order</button>
+<button onclick="addToCart('Dishwash','dsize','dqty')">Add</button>
 </div>
 </div>
 
-<!-- NEW PRODUCT -->
+<!-- DETERGENT -->
 <div class="card">
 <img src="product4.png">
-<h3>Top Load Detergent</h3>
+<h3>Detergent</h3>
 
 <div class="order-box">
 <select id="psize">
-<option value="500g ₹60">500g ₹60</option>
-<option value="1kg ₹110">1kg ₹110</option>
-<option value="2kg ₹200">2kg ₹200</option>
-<option value="4kg ₹380">4kg ₹380</option>
+<option value="60">500g ₹60</option>
+<option value="110">1kg ₹110</option>
+<option value="200">2kg ₹200</option>
+<option value="380">4kg ₹380</option>
 </select>
 
 <select id="pqty">
-<option>1</option>
-<option>2</option>
-<option>3</option>
-<option>5</option>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
 </select>
 
-<button onclick="orderNow('Top Load Detergent','psize','pqty')">Order</button>
+<button onclick="addToCart('Detergent','psize','pqty')">Add</button>
 </div>
 </div>
 
 </div>
 </div>
 
-<!-- ABOUT -->
-<div class="about">
-<h2>About</h2>
-<p>Clenomantra is a modern Indian cleaning brand delivering powerful cleaning solutions.</p>
-
-<h3>Founder Message</h3>
-<p><b>Poonam Duggal:</b> "Cleanliness is our responsibility. Let's build a cleaner India."</p>
+<!-- CART -->
+<div class="cart" id="cartBox">
+Total: ₹0<br>
+<button onclick="checkout()">Checkout</button>
 </div>
 
 <!-- CONTACT -->
 <div class="section">
 <div class="contact">
-<img src="LOGO.png" style="height:50px;">
+<h3>Contact</h3>
 <p>📍 Jalandhar</p>
-<p>📧 clenomantra@gmail.com</p>
 <p>📞 9713545556</p>
-
-<form action="https://formspree.io/f/mgorgvyn" method="POST">
-<input type="text" name="name" placeholder="Name" required>
-<input type="email" name="email" placeholder="Email" required>
-<textarea name="message" placeholder="Message"></textarea>
-<button type="submit">Send</button>
-</form>
-
 </div>
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-© 2026 Clenomantra
-</div>
-
-<a class="wa" href="https://wa.me/919713545556">💬</a>
+<div class="footer">© Clenomantra</div>
 
 <script>
-function orderNow(product,sizeId,qtyId){
-let size=document.getElementById(sizeId).value;
-let qty=document.getElementById(qtyId).value;
+let total = 0;
+let orders = [];
 
-let msg="Order Request%0AProduct: "+product+
-"%0ASize: "+size+
-"%0AQty: "+qty;
+function addToCart(product,sizeId,qtyId){
+let price = parseInt(document.getElementById(sizeId).value);
+let qty = parseInt(document.getElementById(qtyId).value);
 
-window.open("https://wa.me/919713545556?text="+msg);
+let itemTotal = price * qty;
+total += itemTotal;
+
+orders.push(product + " x" + qty + " = ₹" + itemTotal);
+
+document.getElementById("cartBox").innerHTML =
+"Total: ₹" + total + "<br><button onclick='checkout()'>Checkout</button>";
+}
+
+function checkout(){
+let msg = "Order Details%0A";
+orders.forEach(o => msg += o + "%0A");
+msg += "Total: ₹" + total;
+
+window.open("https://wa.me/919713545556?text=" + msg);
 }
 </script>
 

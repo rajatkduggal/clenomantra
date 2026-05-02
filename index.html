@@ -3,77 +3,64 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clenomantra</title><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"><style>
-body {margin:0; font-family:Montserrat; background:#f4f7fb}
+body{margin:0;font-family:Montserrat;background:#f4f7fb}
 
 /* NAV */
-.nav{
-display:flex; justify-content:space-between; align-items:center;
-padding:15px 20px; background:#0b3a82; color:white;
-}
+.nav{display:flex;justify-content:space-between;padding:15px;background:#0b3a82;color:white}
 .nav img{height:40px}
 
 /* HERO */
-.hero{
-text-align:center; color:white;
-padding:60px 20px;
-background:linear-gradient(135deg,#0b3a82,#0f5bd3);
-}
-.hero h1{font-size:40px}
+.hero{text-align:center;padding:60px;background:#0b3a82;color:white}
+.hero h1{font-size:42px}
 
 /* GRID */
-.section{padding:40px 20px; text-align:center}
-.grid{
-display:grid; grid-template-columns:1fr; gap:20px;
-max-width:1200px; margin:auto;
-}
+.section{padding:40px;text-align:center}
+.grid{display:grid;gap:20px}
+.card{background:white;padding:15px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.1)}
+.card img{width:100%;height:180px;object-fit:contain}
 
-/* CARD */
-.card{
-background:white; padding:15px; border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.1);
-transition:0.3s;
+/* FORM */
+select,button,input{
+width:100%;padding:10px;margin-top:8px;border-radius:8px
 }
-.card:hover{
-transform:translateY(-8px);
-}
-.card img{
-width:100%; height:180px; object-fit:contain;
-}
-
-/* ORDER */
-select,button{
-width:100%; padding:10px; margin-top:8px;
-border-radius:8px;
-}
-button{
-background:#0b3a82; color:white; border:none; font-weight:bold;
-}
+button{background:#0b3a82;color:white;border:none}
 
 /* CART */
-.cart{
-position:fixed; bottom:20px; left:20px;
-background:#0b3a82; color:white;
-padding:15px; border-radius:12px;
+.cart{position:fixed;bottom:20px;left:20px;background:#0b3a82;color:white;padding:15px;border-radius:10px}
+
+/* POPUP */
+.popup{
+display:none;
+position:fixed;
+top:0;left:0;
+width:100%;height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+.popup-box{
+background:white;
+padding:20px;
+border-radius:10px;
+width:300px;
 }
 
+/* ABOUT */
+.about{background:white;padding:30px;margin:20px;border-radius:10px}
+
 /* FOOTER */
-.footer{
-background:#0b3a82; color:white;
-text-align:center; padding:15px;
-margin-top:20px;
-}
+.footer{background:#0b3a82;color:white;text-align:center;padding:15px}
 
 @media(min-width:768px){
 .grid{grid-template-columns:repeat(4,1fr)}
 }
-</style></head><body><!-- NAV --><div class="nav">
+</style></head><body><div class="nav">
 <img src="LOGO.png">
-</div><!-- HERO --><div class="hero">
+</div><div class="hero">
 <h1>CLENOMANTRA</h1>
 <p>Har Drop Me Safai Ka Mantra</p>
-<img src="banner1.png" style="width:100%;max-width:900px">
-</div><!-- PRODUCTS --><div class="section">
-<h2>Our Products</h2><div class="grid"><!-- FLOOR --><div class="card">
+</div><div class="section">
+<h2>Our Products</h2><div class="grid"><div class="card">
 <img src="Product1.png">
 <h3>Floor Cleaner</h3>
 <select id="f">
@@ -82,11 +69,9 @@ margin-top:20px;
 <option value="80">750ml - ₹80</option>
 <option value="100">1L - ₹100</option>
 </select>
-<select id="fq">
-<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option>
-</select>
+<select id="fq"><option value="1">1</option><option value="2">2</option></select>
 <button onclick="add('Floor Cleaner','f','fq')">Add</button>
-</div><!-- TOILET --><div class="card">
+</div><div class="card">
 <img src="product2.png">
 <h3>Toilet Cleaner</h3>
 <select id="t">
@@ -95,93 +80,98 @@ margin-top:20px;
 <option value="75">750ml - ₹75</option>
 <option value="100">1L - ₹100</option>
 </select>
-<select id="tq">
-<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option>
-</select>
+<select id="tq"><option value="1">1</option><option value="2">2</option></select>
 <button onclick="add('Toilet Cleaner','t','tq')">Add</button>
-</div><!-- DISHWASH --><div class="card">
+</div><div class="card">
 <img src="product3.png">
-<h3>Dishwash Liquid</h3>
+<h3>Dishwash</h3>
 <select id="d">
 <option value="30">250ml - ₹30</option>
 <option value="50">500ml - ₹50</option>
 <option value="70">750ml - ₹70</option>
 <option value="90">1L - ₹90</option>
 </select>
-<select id="dq">
-<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option>
-</select>
+<select id="dq"><option value="1">1</option><option value="2">2</option></select>
 <button onclick="add('Dishwash','d','dq')">Add</button>
-</div><!-- DETERGENT --><div class="card">
+</div><div class="card">
 <img src="product4.png">
-<h3>Top Load Liquid</h3>
+<h3>Detergent</h3>
 <select id="de">
 <option value="30">250g - ₹30</option>
-<option value="50">500g - ₹50</option>
-<option value="85">1kg - ₹85</option>
 <option value="250">4kg - ₹250</option>
 </select>
-<select id="deq">
-<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option>
-</select>
+<select id="deq"><option value="1">1</option><option value="2">2</option></select>
 <button onclick="add('Detergent','de','deq')">Add</button>
 </div></div>
-</div><!-- CART --><div class="cart">
-🛒 Total: <span id="total">₹0</span><br>
-<button onclick="checkout()">Checkout</button>
-</div><!-- FOOTER --><div class="footer">
-© Clenomantra
-</div><!-- SCRIPT --><script>
+</div><div class="about">
+<h2>About Company</h2>
+<p>Clenomantra ek trusted Indian cleaning brand hai jo har ghar ko safe, hygienic aur fresh banane ka mission rakhta hai. Hamare products powerful cleaning ke sath long-lasting freshness dete hain.</p><h3>Founder Message</h3>
+<p><b>Poonam Duggal:</b> “Hamari soch simple hai — har ghar clean, safe aur healthy ho. Clenomantra ke saath hum quality aur trust deliver karte hain.”</p>
+</div><div class="cart">
+🛒 Total: ₹<span id="total">0</span><br>
+<button onclick="openForm()">Checkout</button>
+</div><!-- FORM POPUP --><div class="popup" id="popup">
+<div class="popup-box">
+<h3>Enter Details</h3>
+<input type="text" id="name" placeholder="Name">
+<input type="tel" id="phone" placeholder="Mobile">
+<button onclick="sendOTP()">Send OTP</button><div id="otpBox" style="display:none;">
+<input type="number" id="otp" placeholder="Enter OTP">
+<button onclick="verifyOTP()">Verify & Order</button>
+</div></div>
+</div><div class="footer">© Clenomantra</div><script>
 
-let cart = [];
-let total = 0;
+let cart=[];
+let total=0;
+let generatedOTP=0;
 
-function add(product, sizeId, qtyId){
+function add(product,sizeId,qtyId){
+let size=document.getElementById(sizeId);
+let qty=document.getElementById(qtyId);
 
-let sizeSelect = document.getElementById(sizeId);
-let qtySelect = document.getElementById(qtyId);
+let sizeText=size.options[size.selectedIndex].text;
+let price=parseInt(size.value);
+let quantity=parseInt(qty.value);
 
-let sizeText = sizeSelect.options[sizeSelect.selectedIndex].text;
-let price = parseInt(sizeSelect.value);
-let qty = parseInt(qtySelect.value);
+let amount=price*quantity;
 
-let amount = price * qty;
+cart.push({product,size:sizeText,qty:quantity,amount});
+total+=amount;
 
-// STORE FULL DETAILS
-cart.push({
-product: product,
-size: sizeText,
-price: price,
-qty: qty,
-amount: amount
-});
-
-// TOTAL UPDATE
-total += amount;
-document.getElementById("total").innerText = "₹" + total;
-
+document.getElementById("total").innerText=total;
 }
 
-function checkout(){
+function openForm(){
+document.getElementById("popup").style.display="flex";
+}
 
-let msg = "🛒 Order Details\n\n";
+function sendOTP(){
+generatedOTP=Math.floor(1000+Math.random()*9000);
+alert("OTP: "+generatedOTP);
+document.getElementById("otpBox").style.display="block";
+}
 
-cart.forEach((item,index)=>{
+function verifyOTP(){
+let userOTP=document.getElementById("otp").value;
 
-msg += `${index+1}. ${item.product}\n`;
-msg += `📦 Size: ${item.size}\n`;
-msg += `💰 Rate: ₹${item.price}\n`;
-msg += `🔢 Quantity: ${item.qty}\n`;
-msg += `🧾 Amount: ₹${item.amount}\n\n`;
+if(userOTP==generatedOTP){
 
+let name=document.getElementById("name").value;
+let phone=document.getElementById("phone").value;
+
+let msg=`🛒 Order\nName: ${name}\nPhone: ${phone}\n\n`;
+
+cart.forEach((item,i)=>{
+msg+=`${i+1}. ${item.product}\n${item.size}\nQty: ${item.qty}\nAmount: ₹${item.amount}\n\n`;
 });
 
-msg += "----------------------\n";
-msg += "Total: ₹" + total;
+msg+="Total: ₹"+total;
 
-let url = "https://wa.me/919713545556?text=" + encodeURIComponent(msg);
+window.open("https://wa.me/919713545556?text="+encodeURIComponent(msg));
 
-window.open(url);
+}else{
+alert("Wrong OTP");
+}
 
 }
 

@@ -1,309 +1,239 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clenomantra - Premium Cleaning Solutions</title>
+<title>Clenomantra</title><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet"><style>
+body {margin:0; font-family:Montserrat; background:#f4f7fb}
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
-
-<style>
-/* GLOBAL */
-body { margin:0; font-family:'Montserrat', sans-serif; background:#f8fafc; scroll-behavior: smooth; overflow-x: hidden; }
-
-/* NAV - Glassmorphism Effect */
-.nav {
-    display:flex; justify-content:space-between; align-items: center;
-    padding:15px 5%; background:rgba(11, 58, 130, 0.95);
-    position: sticky; top: 0; z-index: 1000;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+/* NAV */
+.nav{
+display:flex; justify-content:space-between; align-items:center;
+padding:15px 20px; background:#0b3a82; color:white;
+position:sticky; top:0; z-index:100;
 }
-.nav img { height:45px; transition: transform 0.3s; }
-.nav img:hover { transform: scale(1.05); }
-
-.nav a {
-    background: linear-gradient(135deg, #22c55e, #16a34a); padding:10px 24px;
-    border-radius:30px; color:white; text-decoration:none; font-weight: 600;
-    box-shadow: 0 4px 10px rgba(34, 197, 94, 0.3); transition: 0.3s;
-}
-.nav a:hover { transform: translateY(-2px); box-shadow: 0 6px 15px rgba(34, 197, 94, 0.5); }
-
-/* HERO ANIMATION */
-.hero {
-    height:90vh;
-    background:url('banner1.png') center/cover no-repeat;
-    animation: zoom 15s infinite alternate ease-in-out;
-    position: relative; overflow: hidden;
+.nav img{height:42px}
+.nav a{
+background:#22c55e; padding:10px 20px; border-radius:30px;
+color:white; text-decoration:none; font-weight:bold;
 }
 
-@keyframes zoom {
-    0% { background-size: 100%; }
-    100% { background-size: 115%; }
+/* HERO */
+.hero{
+text-align:center; color:white;
+padding:70px 20px;
+background:linear-gradient(135deg,#0b3a82,#0f5bd3);
+position:relative;
+overflow:hidden;
+}
+.hero h1{font-size:48px; margin-bottom:10px}
+.hero p{font-size:18px}
+
+/* FLASH EFFECT */
+.hero::before{
+content:"";
+position:absolute;
+width:200%;
+height:200%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,0.3),transparent);
+top:-50%; left:-50%;
+animation:flash 4s infinite;
+}
+@keyframes flash{
+0%{transform:rotate(0deg)}
+100%{transform:rotate(360deg)}
 }
 
-.overlay {
-    background: linear-gradient(to bottom, rgba(11,58,130,0.8), rgba(11,58,130,0.6));
-    height:100%; display:flex; flex-direction:column;
-    justify-content:center; align-items:center;
-    color:white; text-align:center; padding: 0 20px;
+.hero img{
+width:100%; max-width:900px;
+margin-top:20px;
+border-radius:12px;
 }
 
-.brand {
-    font-size: clamp(40px, 6vw, 70px); /* Responsive font */
-    font-weight:800; margin-bottom: 10px;
-    background: linear-gradient(90deg, #ffffff, #22c55e, #ffffff);
-    background-size: 200% auto;
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-    animation: shine 3s linear infinite;
+/* SECTION */
+.section{padding:50px 20px; text-align:center}
+
+/* GRID */
+.grid{
+display:grid;
+grid-template-columns:1fr;
+gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
-@keyframes shine { to { background-position: 200% center; } }
-
-.overlay p { font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; }
-
-/* SECTIONS */
-.section { padding:80px 5%; text-align:center; max-width: 1200px; margin: auto; }
-h2 { font-size: 2.2rem; color: #0b3a82; margin-bottom: 40px; }
-
-/* PRODUCTS GRID */
-.grid {
-    display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px;
+/* CARD */
+.card{
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+.card img{
+width:100%; height:200px; object-fit:contain;
 }
 
-/* PREMIUM CARDS */
-.card {
-    background:white; padding:30px 20px; border-radius:20px;
-    box-shadow:0 10px 30px rgba(0,0,0,0.05);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid rgba(0,0,0,0.02);
+/* ORDER */
+select,button{
+width:100%;
+padding:10px;
+margin-top:8px;
+border-radius:8px;
+border:1px solid #ccc;
 }
-.card:hover { 
-    transform:translateY(-10px); 
-    box-shadow:0 20px 40px rgba(11, 58, 130, 0.1); 
+button{
+background:#0b3a82; color:white; font-weight:bold;
+border:none; cursor:pointer;
 }
-
-.card img { width:100%; height:200px; object-fit:contain; transition: transform 0.4s; }
-.card:hover img { transform: scale(1.08); }
-
-.card h3 { color: #0b3a82; margin: 20px 0 15px; }
-
-select, button {
-    width:100%; padding:12px; margin-top:10px;
-    border-radius:10px; font-family:'Montserrat', sans-serif;
-    border: 1px solid #e2e8f0; background: #f8fafc; font-size: 0.95rem; outline: none;
-}
-select { cursor: pointer; }
-select:focus { border-color: #0b3a82; }
-
-button {
-    background: #0b3a82; color:white; font-weight: 600; cursor: pointer;
-    border: none; transition: all 0.3s ease;
-}
-button:hover { background: #082a61; transform: translateY(-2px); }
-.btn-success { background: #22c55e !important; color: white !important; }
 
 /* CART */
-.cart {
-    position:fixed; bottom:20px; left:20px;
-    background:rgba(11, 58, 130, 0.95); color:white;
-    padding:15px 25px; border-radius:15px; font-weight: 600; font-size: 1.1rem;
-    box-shadow:0 10px 30px rgba(0,0,0,0.3); backdrop-filter: blur(5px);
-    z-index: 1000; transform: scale(0); opacity: 0;
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s;
-}
-.cart.active { transform: scale(1); opacity: 1; }
-
-.cart button {
-    background: #22c55e; margin-top: 10px; font-size: 1rem;
-    animation: pulse 2s infinite; padding: 10px 20px;
-}
-@keyframes pulse {
-    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6); }
-    70% { box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+.cart{
+position:fixed;
+bottom:20px; left:20px;
+background:#0b3a82;
+color:white;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.3);
 }
 
 /* ABOUT */
-.about {
-    background:white; padding:80px 5%; margin:40px auto;
-    border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.03); max-width: 900px;
+.about{
+background:white;
+padding:40px;
+border-radius:15px;
+max-width:900px;
+margin:auto;
+text-align:center;
 }
-.about p { font-size: 1.1rem; color: #475569; line-height: 1.8; }
-.about h3 { margin-top: 40px; color: #0b3a82; }
 
-/* CONTACT & MAP */
-.contact { text-align:center; padding:80px 5%; background:#f8fafc; }
-.contact img { height:80px; margin-bottom:20px; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1)); }
-.contact p { font-size: 1.1rem; color: #334155; margin: 10px 0; font-weight: 600; }
-
-.map { max-width: 1000px; margin: 40px auto 0; border-radius: 20px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-.map iframe { width:100%; height:400px; border:0; display: block; }
+/* CONTACT */
+.contact{
+background:white;
+padding:30px;
+border-radius:15px;
+max-width:500px;
+margin:auto;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
 
 /* FOOTER */
-.footer {
-    background:#062350; color:white; text-align:center;
-    padding:25px; font-weight: 600; letter-spacing: 1px;
+.footer{
+background:#0b3a82;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:30px;
 }
 
-/* SCROLL REVEAL CLASSES */
-.reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s ease-out; }
-.reveal.active { opacity: 1; transform: translateY(0); }
-.d-1 { transition-delay: 0.1s; } .d-2 { transition-delay: 0.2s; }
-.d-3 { transition-delay: 0.3s; } .d-4 { transition-delay: 0.4s; }
-
-</style>
-</head>
-
-<body>
-
-<div class="nav">
-    <img src="LOGO.png" alt="Clenomantra">
-    <a href="https://wa.me/919713545556">Order Now</a>
+@media(min-width:768px){
+.grid{grid-template-columns:repeat(4,1fr)}
+}
+</style></head><body><!-- NAV --><div class="nav">
+<img src="LOGO.png">
+<a href="https://wa.me/919713545556">Order Now</a>
+</div><!-- HERO --><div class="hero">
+<h1>CLENOMANTRA</h1>
+<p>Har Drop Me Safai Ka Mantra</p>
+<img src="banner1.png">
+</div><!-- PRODUCTS --><div class="section">
+<h2>Our Products</h2><div class="grid"><!-- FLOOR --><div class="card">
+<img src="Product1.png">
+<h3>Floor Cleaner</h3>
+<select id="f">
+<option value="40">250ml ₹40</option>
+<option value="60">500ml ₹60</option>
+<option value="80">750ml ₹80</option>
+<option value="100">1L ₹100</option>
+</select>
+<select id="fq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
+<button onclick="add('Floor Cleaner','f','fq')">Add</button>
+</div><!-- TOILET --><div class="card">
+<img src="product2.png">
+<h3>Toilet Cleaner</h3>
+<select id="t">
+<option value="30">250ml ₹30</option>
+<option value="50">500ml ₹50</option>
+<option value="75">750ml ₹75</option>
+<option value="100">1L ₹100</option>
+</select>
+<select id="tq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
+<button onclick="add('Toilet Cleaner','t','tq')">Add</button>
+</div><!-- DISHWASH --><div class="card">
+<img src="product3.png">
+<h3>Dishwash Liquid</h3>
+<select id="d">
+<option value="30">250ml ₹30</option>
+<option value="50">500ml ₹50</option>
+<option value="70">750ml ₹70</option>
+<option value="90">1L ₹90</option>
+</select>
+<select id="dq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
+<button onclick="add('Dishwash','d','dq')">Add</button>
+</div><!-- DETERGENT --><div class="card">
+<img src="product4.png">
+<h3>Top Load Liquid</h3>
+<select id="de">
+<option value="30">250g ₹30</option>
+<option value="50">500g ₹50</option>
+<option value="85">1kg ₹85</option>
+<option value="250">4kg ₹250</option>
+</select>
+<select id="deq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
+<button onclick="add('Detergent','de','deq')">Add</button>
+</div></div>
+</div><!-- ABOUT --><div class="section">
+<div class="about"><h2>About Clenomantra</h2>
+<p>
+Clenomantra is not just a cleaning brand — it is a commitment to hygiene, trust, and modern Indian households. 
+We deliver powerful, safe, and long-lasting cleaning solutions designed for real everyday needs. 
+Our products combine advanced formulations with affordability, ensuring every home experiences premium quality cleaning.
+</p><h3>Founder Message</h3>
+<p>
+“I, <b>Poonam Duggal</b>, believe cleanliness is the foundation of a healthy and successful life. 
+Clenomantra is built with a vision to transform every household with trust, quality, and powerful cleaning. 
+We are not selling products — we are delivering confidence, hygiene, and a better lifestyle.”
+</p></div>
+</div><!-- CONTACT --><div class="section">
+<div class="contact">
+<h2>Contact Us</h2>
+<p>📍 Jalandhar, Punjab</p>
+<p>📞 +91 9713545556</p>
+<p>📧 clenomantra@gmail.com</p>
 </div>
-
-<div class="hero">
-    <div class="overlay">
-        <h1 class="brand reveal active">CLENOMANTRA</h1>
-        <p class="reveal active d-1">Har Drop Me Safai Ka Mantra</p>
-    </div>
-</div>
-
-<div class="section">
-    <h2 class="reveal">Explore Our Products</h2>
-
-    <div class="grid">
-        <div class="card reveal d-1">
-            <img src="Product1.png" alt="Floor Cleaner">
-            <h3>Floor Cleaner</h3>
-            <select id="f">
-                <option value="25">250ml - ₹40</option>
-                <option value="40">500ml - ₹60</option>
-                <option value="60">750ml - ₹80</option>
-                <option value="75">1 Ltr - ₹100</option>
-            </select>
-            <select id="fq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
-            <button onclick="add(this, 'f', 'fq')">Add To Cart</button>
-        </div>
-
-        <div class="card reveal d-2">
-            <img src="product2.png" alt="Toilet Cleaner">
-            <h3>Toilet Cleaner</h3>
-            <select id="t">
-                <option value="20">250ml - ₹30</option>
-                <option value="35">500ml - ₹50</option>
-                <option value="50">750ml - ₹75</option>
-                <option value="60">1 Ltr - ₹100</option>
-            </select>
-            <select id="tq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
-            <button onclick="add(this, 't', 'tq')">Add To Cart</button>
-        </div>
-
-        <div class="card reveal d-3">
-            <img src="product3.png" alt="Dishwash">
-            <h3>Dishwash Liquid</h3>
-            <select id="d">
-                <option value="30">250ml - ₹30</option>
-                <option value="50">500ml - ₹50</option>
-                <option value="70">750ml - ₹70</option>
-                <option value="90">1 Ltr - ₹90</option>
-            </select>
-            <select id="dq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
-            <button onclick="add(this, 'd', 'dq')">Add To Cart</button>
-        </div>
-
-        <div class="card reveal d-4">
-            <img src="product4.png" alt="Detergent">
-            <h3>Detergent Powder</h3>
-            <select id="de">
-                <option value="30">250g - ₹30</option>
-                <option value="60">500g - ₹50</option>
-                <option value="110">1kg - ₹85</option>
-                <option value="240">4kg - ₹250</option>
-            </select>
-            <select id="deq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
-            <button onclick="add(this, 'de', 'deq')">Add To Cart</button>
-        </div>
-    </div>
-</div>
-
-<div class="cart" id="cart">
-    🛒 Total: <span id="cartTotal">₹0</span><br>
-    <button onclick="checkout()">Checkout Securely</button>
-</div>
-
-<div class="section reveal">
-    <div class="about">
-        <h2>About Clenomantra</h2>
-        <p>Clenomantra is a premium cleaning brand delivering powerful hygiene solutions across India. Our mission is to bring deep cleaning, freshness, and trust to every home. We use top-tier ingredients to ensure maximum safety and cleanliness.</p>
-
-        <h3>Founder Message</h3>
-        <p><i>"I, <b>Poonam Duggal</b>, believe cleanliness is the foundation of a healthy life. Clenomantra is built to serve every home with quality and trust."</i></p>
-    </div>
-</div>
-
-<div class="contact reveal">
-    <img src="LOGO.png" alt="Clenomantra Logo">
-    <h2>Contact Us</h2>
-    <p>📍 Jalandhar, Punjab, India</p>
-    <p>📞 +91 9713545556</p>
-    <p>📧 clenomantra@gmail.com</p>
-
-    <div class="map reveal d-1">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d217897.62046252197!2d75.44111361952213!3d31.32238476722302!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391a5a5747a9eb91%3A0xc74b34c05aa5b4b8!2sJalandhar%2C%20Punjab!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-</div>
-
-<div class="footer">
-    © 2026 Clenomantra | Made in India 🇮🇳
-</div>
-
-<script>
+</div><!-- CART --><div class="cart">
+🛒 Total: <span id="total">₹0</span><br>
+<button onclick="checkout()">Checkout</button>
+</div><!-- FOOTER --><div class="footer">
+© Clenomantra | Made in India 🇮🇳
+</div><script>
+let cart = [];
 let total = 0;
 
-function add(buttonElement, id, qtyId) {
-    // Calculate Price
-    let price = parseInt(document.getElementById(id).value);
-    let qty = parseInt(document.getElementById(qtyId).value);
-    total += price * qty;
-    
-    // Update Cart UI
-    let cart = document.getElementById("cart");
-    document.getElementById("cartTotal").innerText = "₹" + total;
-    cart.classList.add("active"); // Show cart nicely
+function add(product, sizeId, qtyId){
+let price = parseInt(document.getElementById(sizeId).value);
+let qty = parseInt(document.getElementById(qtyId).value);
 
-    // Button Flash Animation (Feedback to user)
-    let originalText = buttonElement.innerText;
-    buttonElement.innerText = "Added! ✓";
-    buttonElement.classList.add("btn-success");
-    
-    setTimeout(() => {
-        buttonElement.innerText = originalText;
-        buttonElement.classList.remove("btn-success");
-    }, 1500);
+cart.push({product, price, qty});
+total += price * qty;
+
+document.getElementById("total").innerText = "₹" + total;
 }
 
-function checkout() {
-    window.open("https://wa.me/919713545556?text=Hello%20Clenomantra,%20I%20want%20to%20place%20an%20order.%20My%20Total%20is%20%E2%82%B9" + total);
-}
+function checkout(){
+let msg = "🛒 Order Details\n\n";
 
-// Scroll Reveal Animations
-document.addEventListener('DOMContentLoaded', function() {
-    let reveals = document.querySelectorAll('.reveal');
-    function reveal() {
-        let windowHeight = window.innerHeight;
-        reveals.forEach(el => {
-            let elementTop = el.getBoundingClientRect().top;
-            if (elementTop < windowHeight - 80) {
-                el.classList.add('active');
-            }
-        });
-    }
-    window.addEventListener('scroll', reveal);
-    reveal(); // Trigger on load
+cart.forEach(item=>{
+msg += item.product + " x " + item.qty + " = ₹" + (item.price * item.qty) + "\n";
 });
-</script>
 
-</body>
+msg += "\nTotal: ₹" + total;
+
+window.open("https://wa.me/919713545556?text=" + encodeURIComponent(msg));
+}
+</script></body>
 </html>

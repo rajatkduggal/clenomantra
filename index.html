@@ -9,125 +9,58 @@ body {margin:0; font-family:Montserrat; background:#f4f7fb}
 .nav{
 display:flex; justify-content:space-between; align-items:center;
 padding:15px 20px; background:#0b3a82; color:white;
-position:sticky; top:0; z-index:100;
 }
-.nav img{height:42px}
-.nav a{
-background:#22c55e; padding:10px 20px; border-radius:30px;
-color:white; text-decoration:none; font-weight:bold;
-}
+.nav img{height:40px}
 
 /* HERO */
 .hero{
 text-align:center; color:white;
-padding:70px 20px;
+padding:60px 20px;
 background:linear-gradient(135deg,#0b3a82,#0f5bd3);
-position:relative;
-overflow:hidden;
 }
-.hero h1{font-size:48px; margin-bottom:10px}
-.hero p{font-size:18px}
-
-/* FLASH EFFECT */
-.hero::before{
-content:"";
-position:absolute;
-width:200%;
-height:200%;
-background:linear-gradient(120deg,transparent,rgba(255,255,255,0.3),transparent);
-top:-50%; left:-50%;
-animation:flash 4s infinite;
-}
-@keyframes flash{
-0%{transform:rotate(0deg)}
-100%{transform:rotate(360deg)}
-}
-
-.hero img{
-width:100%; max-width:900px;
-margin-top:20px;
-border-radius:12px;
-}
-
-/* SECTION */
-.section{padding:50px 20px; text-align:center}
+.hero h1{font-size:40px}
 
 /* GRID */
+.section{padding:40px 20px; text-align:center}
 .grid{
-display:grid;
-grid-template-columns:1fr;
-gap:25px;
-max-width:1200px;
-margin:auto;
+display:grid; grid-template-columns:1fr; gap:20px;
+max-width:1200px; margin:auto;
 }
 
 /* CARD */
 .card{
-background:white;
-padding:15px;
-border-radius:15px;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+background:white; padding:15px; border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
 transition:0.3s;
 }
 .card:hover{
-transform:translateY(-10px) scale(1.02);
-box-shadow:0 10px 30px rgba(0,0,0,0.15);
+transform:translateY(-8px);
 }
 .card img{
-width:100%; height:200px; object-fit:contain;
+width:100%; height:180px; object-fit:contain;
 }
 
 /* ORDER */
 select,button{
-width:100%;
-padding:10px;
-margin-top:8px;
+width:100%; padding:10px; margin-top:8px;
 border-radius:8px;
-border:1px solid #ccc;
 }
 button{
-background:#0b3a82; color:white; font-weight:bold;
-border:none; cursor:pointer;
+background:#0b3a82; color:white; border:none; font-weight:bold;
 }
 
 /* CART */
 .cart{
-position:fixed;
-bottom:20px; left:20px;
-background:#0b3a82;
-color:white;
-padding:15px;
-border-radius:12px;
-box-shadow:0 5px 20px rgba(0,0,0,0.3);
-}
-
-/* ABOUT */
-.about{
-background:white;
-padding:40px;
-border-radius:15px;
-max-width:900px;
-margin:auto;
-text-align:center;
-}
-
-/* CONTACT */
-.contact{
-background:white;
-padding:30px;
-border-radius:15px;
-max-width:500px;
-margin:auto;
-box-shadow:0 5px 20px rgba(0,0,0,0.08);
+position:fixed; bottom:20px; left:20px;
+background:#0b3a82; color:white;
+padding:15px; border-radius:12px;
 }
 
 /* FOOTER */
 .footer{
-background:#0b3a82;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:30px;
+background:#0b3a82; color:white;
+text-align:center; padding:15px;
+margin-top:20px;
 }
 
 @media(min-width:768px){
@@ -135,105 +68,122 @@ margin-top:30px;
 }
 </style></head><body><!-- NAV --><div class="nav">
 <img src="LOGO.png">
-<a href="https://wa.me/919713545556">Order Now</a>
 </div><!-- HERO --><div class="hero">
 <h1>CLENOMANTRA</h1>
 <p>Har Drop Me Safai Ka Mantra</p>
-<img src="banner1.png">
+<img src="banner1.png" style="width:100%;max-width:900px">
 </div><!-- PRODUCTS --><div class="section">
 <h2>Our Products</h2><div class="grid"><!-- FLOOR --><div class="card">
 <img src="Product1.png">
 <h3>Floor Cleaner</h3>
 <select id="f">
-<option value="40">250ml ₹40</option>
-<option value="60">500ml ₹60</option>
-<option value="80">750ml ₹80</option>
-<option value="100">1L ₹100</option>
+<option value="40">250ml - ₹40</option>
+<option value="60">500ml - ₹60</option>
+<option value="80">750ml - ₹80</option>
+<option value="100">1L - ₹100</option>
 </select>
-<select id="fq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
+<select id="fq">
+<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option>
+</select>
 <button onclick="add('Floor Cleaner','f','fq')">Add</button>
 </div><!-- TOILET --><div class="card">
 <img src="product2.png">
 <h3>Toilet Cleaner</h3>
 <select id="t">
-<option value="30">250ml ₹30</option>
-<option value="50">500ml ₹50</option>
-<option value="75">750ml ₹75</option>
-<option value="100">1L ₹100</option>
+<option value="30">250ml - ₹30</option>
+<option value="50">500ml - ₹50</option>
+<option value="75">750ml - ₹75</option>
+<option value="100">1L - ₹100</option>
 </select>
-<select id="tq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
+<select id="tq">
+<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option>
+</select>
 <button onclick="add('Toilet Cleaner','t','tq')">Add</button>
 </div><!-- DISHWASH --><div class="card">
 <img src="product3.png">
 <h3>Dishwash Liquid</h3>
 <select id="d">
-<option value="30">250ml ₹30</option>
-<option value="50">500ml ₹50</option>
-<option value="70">750ml ₹70</option>
-<option value="90">1L ₹90</option>
+<option value="30">250ml - ₹30</option>
+<option value="50">500ml - ₹50</option>
+<option value="70">750ml - ₹70</option>
+<option value="90">1L - ₹90</option>
 </select>
-<select id="dq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
+<select id="dq">
+<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option>
+</select>
 <button onclick="add('Dishwash','d','dq')">Add</button>
 </div><!-- DETERGENT --><div class="card">
 <img src="product4.png">
 <h3>Top Load Liquid</h3>
 <select id="de">
-<option value="30">250g ₹30</option>
-<option value="50">500g ₹50</option>
-<option value="85">1kg ₹85</option>
-<option value="250">4kg ₹250</option>
+<option value="30">250g - ₹30</option>
+<option value="50">500g - ₹50</option>
+<option value="85">1kg - ₹85</option>
+<option value="250">4kg - ₹250</option>
 </select>
-<select id="deq"><option>1</option><option>2</option><option>3</option><option>5</option></select>
+<select id="deq">
+<option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="5">5</option>
+</select>
 <button onclick="add('Detergent','de','deq')">Add</button>
 </div></div>
-</div><!-- ABOUT --><div class="section">
-<div class="about"><h2>About Clenomantra</h2>
-<p>
-Clenomantra is not just a cleaning brand — it is a commitment to hygiene, trust, and modern Indian households. 
-We deliver powerful, safe, and long-lasting cleaning solutions designed for real everyday needs. 
-Our products combine advanced formulations with affordability, ensuring every home experiences premium quality cleaning.
-</p><h3>Founder Message</h3>
-<p>
-“I, <b>Poonam Duggal</b>, believe cleanliness is the foundation of a healthy and successful life. 
-Clenomantra is built with a vision to transform every household with trust, quality, and powerful cleaning. 
-We are not selling products — we are delivering confidence, hygiene, and a better lifestyle.”
-</p></div>
-</div><!-- CONTACT --><div class="section">
-<div class="contact">
-<h2>Contact Us</h2>
-<p>📍 Jalandhar, Punjab</p>
-<p>📞 +91 9713545556</p>
-<p>📧 clenomantra@gmail.com</p>
-</div>
 </div><!-- CART --><div class="cart">
 🛒 Total: <span id="total">₹0</span><br>
 <button onclick="checkout()">Checkout</button>
 </div><!-- FOOTER --><div class="footer">
-© Clenomantra | Made in India 🇮🇳
-</div><script>
+© Clenomantra
+</div><!-- SCRIPT --><script>
+
 let cart = [];
 let total = 0;
 
 function add(product, sizeId, qtyId){
-let price = parseInt(document.getElementById(sizeId).value);
-let qty = parseInt(document.getElementById(qtyId).value);
 
-cart.push({product, price, qty});
-total += price * qty;
+let sizeSelect = document.getElementById(sizeId);
+let qtySelect = document.getElementById(qtyId);
 
+let sizeText = sizeSelect.options[sizeSelect.selectedIndex].text;
+let price = parseInt(sizeSelect.value);
+let qty = parseInt(qtySelect.value);
+
+let amount = price * qty;
+
+// STORE FULL DETAILS
+cart.push({
+product: product,
+size: sizeText,
+price: price,
+qty: qty,
+amount: amount
+});
+
+// TOTAL UPDATE
+total += amount;
 document.getElementById("total").innerText = "₹" + total;
+
 }
 
 function checkout(){
+
 let msg = "🛒 Order Details\n\n";
 
-cart.forEach(item=>{
-msg += item.product + " x " + item.qty + " = ₹" + (item.price * item.qty) + "\n";
+cart.forEach((item,index)=>{
+
+msg += `${index+1}. ${item.product}\n`;
+msg += `📦 Size: ${item.size}\n`;
+msg += `💰 Rate: ₹${item.price}\n`;
+msg += `🔢 Quantity: ${item.qty}\n`;
+msg += `🧾 Amount: ₹${item.amount}\n\n`;
+
 });
 
-msg += "\nTotal: ₹" + total;
+msg += "----------------------\n";
+msg += "Total: ₹" + total;
 
-window.open("https://wa.me/919713545556?text=" + encodeURIComponent(msg));
+let url = "https://wa.me/919713545556?text=" + encodeURIComponent(msg);
+
+window.open(url);
+
 }
+
 </script></body>
 </html>
